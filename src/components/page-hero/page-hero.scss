@@ -1,3 +1,5 @@
+@use 'styles/utils';
+
 .page-hero {
   position: relative;
   height: 840px;
@@ -27,6 +29,18 @@
     position: absolute;
     inset: 0;
     z-index: 2;
-    padding-top: 201px;
+    max-width: 426px;
+    padding: 201px 80px 111px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title {
+      @include utils.text-header-100;
+    }
+
+    .text {
+      @include utils.text-base-200-lg-100
+    }
   }
 }

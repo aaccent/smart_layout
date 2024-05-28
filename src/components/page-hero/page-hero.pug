@@ -15,5 +15,5 @@ mixin page-hero(props)
         source(srcset=props.mobPicture media='(max-width: 1000px)')
         +img(props.picture).page-hero--image
     .page-hero--content
-      .page-hero--title=props.title
-      .page-hero--text=props.text
+      .title=props.title
+      .text=props.text
