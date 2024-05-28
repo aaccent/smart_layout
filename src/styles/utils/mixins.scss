@@ -62,3 +62,9 @@
 @mixin transparent-scroll() {
   @include custom-scroll(0, transparent, transparent, 0);
 }
+
+@mixin bg-defaults($size: contain) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: #{$size};
+}
