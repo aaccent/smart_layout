@@ -1,8 +1,19 @@
-mixin first-block(props)
+include layout/utils
+
+mixin page-hero(props)
   -
-    var props = {
+    props = Object.assign({
       title: '',
       text: '',
       picture: '',
       mobPicture: '',
-    }
+    }, props || {})
+
+  .section.page-hero
+    .page-hero--wrapper
+      picture
+        source(srcset=props.mobPicture media='(max-width: 1000px)')
+        +img(props.picture).page-hero--image
+    .page-hero--content
+      .page-hero--title=props.title
+      .page-hero--text=props.text

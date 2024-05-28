@@ -1,0 +1,32 @@
+.page-hero {
+  position: relative;
+  height: 840px;
+
+  &--wrapper {
+    position: absolute;
+    inset: 0;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(174deg, rgba(2, 41, 100, 0.84) 0%, rgba(18, 67, 142, 0.84) 36.53%, rgba(41, 101, 193, 0.84) 100%);
+      z-index: 1;
+    }
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &--content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding-top: 201px;
+  }
+}

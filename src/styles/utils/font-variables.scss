@@ -1,0 +1,54 @@
+@mixin text-header-100() {
+  font: var(--header-100);
+  letter-spacing: 0;
+}
+
+@mixin text-header-200() {
+  font: var(--header-200);
+  letter-spacing: 0;
+}
+
+@mixin text-header-300() {
+  font: var(--header-300);
+  letter-spacing: 0.02em;;
+}
+
+@mixin text-header-400() {
+  font: var(--header-400);
+  letter-spacing: 0;
+}
+
+@mixin text-base-100-lg-100() {
+  font: var(--text-base-100-lg-100);
+  letter-spacing: 0;
+}
+
+@mixin text-base-200-lg-100() {
+  font: var(--text-base-200-lg-100);
+  letter-spacing: 0;
+}
+
+@mixin text-base-200-reg-100() {
+  font: var(--text-base-200-reg-100);
+  letter-spacing: 0.01em;
+}
+
+@mixin text-base-300-lg-100() {
+  font: var(--text-base-300-lg-100);
+  letter-spacing: 0;
+}
+
+@mixin text-base-400-reg-100() {
+  font: var(--text-base-400-reg-100);
+  letter-spacing: 0.01em;
+}
+
+@mixin text-base-400-reg-200() {
+  font: var(--text-base-400-reg-200);
+  letter-spacing: 0.01em;
+}
+
+@mixin text-base-500-lg-100() {
+  font: var(--text-base-500-lg-100);
+  letter-spacing: 0.01em;
+}
