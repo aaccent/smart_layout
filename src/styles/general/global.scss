@@ -1,3 +1,5 @@
+@use "styles/utils";
+
 html {
   overflow-x: clip;
   font-size: 62.5%;
@@ -6,8 +8,8 @@ html {
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1230px;
+  padding: 0 80px;
+  max-width: 1680px;
 }
 
 .main-wrapper {
@@ -28,7 +30,7 @@ html {
 
 body {
   overflow-x: clip;
-  font: var(--text-base-200-reg-100);
+  @include utils.text-base-200-reg-100;
 }
 
 html.disable-scroll {
