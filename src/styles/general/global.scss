@@ -28,6 +28,7 @@ html {
 
 body {
   overflow-x: clip;
+  font: var(--text-base-200);
 }
 
 html.disable-scroll {
