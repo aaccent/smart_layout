@@ -1,8 +1,25 @@
-mixin first-block(props)
+include layout/utils
+
+mixin page-hero(props)
   -
-    var props = {
+    props = Object.assign({
       title: '',
       text: '',
       picture: '',
       mobPicture: '',
-    }
+      count: ''
+    }, props || {})
+
+  .section.page-hero
+    .page-hero__wrapper
+      picture
+        source(srcset=props.mobPicture media='(max-width: 1000px)')
+        +img(props.picture).page-hero__image
+    .page-hero__content
+      .title=props.title
+        if props.count
+          span.count <br>/#{props.count}
+      .text
+        p #{props.text}
+        .arrow
+          +img(require('assets/icons/arrow.svg'))
