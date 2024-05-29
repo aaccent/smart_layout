@@ -2,7 +2,7 @@
 
 .benefits {
   &__items {
-    @include utils.clear-list;
+    @include utils.reset-list;
     margin-bottom: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -11,7 +11,7 @@
 
   &__list-item {
     position: relative;
-    padding: 48px !important;
+    padding: 48px;
     display: block;
     border-radius: 40px;
     background: hsla(0, 0%, 100%, 0.1);
@@ -39,29 +39,29 @@
   }
 
   &__numbers {
-    @include utils.clear-list;
-    padding: 80px 120px;
+    @include utils.reset-list;
+    padding: 80px 25px;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 500px;
     border: 1px solid hsl(0, 0%, 100%, .2);
   }
 
   &__number-item {
-    width: 100%;
-    padding: 0 125px !important;
+    padding: 0 125px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-right: 1px dashed hsl(0, 0%, 100%, .3);
 
     &:first-of-type{
-      padding-left: 0 !important;
+      padding-left: 0;
     }
 
     &:last-of-type {
-      padding-right: 0 !important;
+      padding-right: 0;
       border-right: 0;
     }
   }
@@ -80,5 +80,53 @@
     opacity: .5;
     text-align: center;
     text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: utils.$desktop1400) {
+  .benefits {
+    &__items {
+      margin-bottom: 35px;
+      grid-template-columns: 1fr;
+    }
+
+    &__list-item {
+      padding: 20px;
+      border-radius: 25px;
+    }
+
+    &__item-icon {
+      position: initial;
+      margin-bottom: 27px;
+      --size: 50px;
+    }
+
+    &__item-title {
+      margin-bottom: 10px;
+    }
+
+    &__item-text {
+      font: 300 1.4rem/1.2 var(--geologica);
+    }
+
+    &__number-item {
+      padding: 0 90px;
+    }
+
+    &__numbers {
+      padding: 10px;
+      flex-direction: column;
+      border-radius: 80px;
+    }
+
+    &__number-item {
+      padding: 25px 0;
+      border-right: 0;
+      border-bottom: 1px dashed hsl(0, 0%, 100%, .3);
+
+      &:last-of-type {
+        border-bottom: 0;
+      }
+    }
   }
 }
