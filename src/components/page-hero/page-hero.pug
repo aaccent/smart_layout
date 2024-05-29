@@ -11,11 +11,11 @@ mixin page-hero(props)
     }, props || {})
 
   .section.page-hero
-    .page-hero--wrapper
+    .page-hero__wrapper
       picture
         source(srcset=props.mobPicture media='(max-width: 1000px)')
-        +img(props.picture).page-hero--image
-    .page-hero--content
+        +img(props.picture).page-hero__image
+    .page-hero__content
       .title=props.title
         if props.count
           span.count <br>/#{props.count}
