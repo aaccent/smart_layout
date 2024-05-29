@@ -45,8 +45,8 @@ footer.footer: .container
         nav.footer__menu-block: ul.footer__menu
             each item in menu
                 li.footer__menu-item
-                    .footer__menu-item-title= item.title
-                    ul.footer__menu-list
+                    +btn('footer-menu')(tabindex="0").footer__menu-item-title= item.title
+                    ul.footer__menu-item-list
                         each subitem in item.list
                             li: +anchor= subitem
     .footer__bottom
@@ -54,4 +54,4 @@ footer.footer: .container
         .footer__policy
             span © 2024, ООО «смарт»
             +anchor политика конфиденциальности
-        +anchor('https://aaccent.ru/'): +img(require('assets/static/aaccent-logo.svg')).footer__creators
+        +anchor('https://aaccent.ru/').footer__creators: +img(require('assets/static/aaccent-logo.svg'))
