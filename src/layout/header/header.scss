@@ -172,16 +172,6 @@
   &__email {
     margin: 10px 0 20px;
     display: none;
-    align-items: center;
-    gap: 5px;
-
-    &::before {
-      content: '';
-      display: block;
-      @include utils.square(20px);
-      background-image: url('assets/icons/email.svg');
-      @include utils.bg-defaults;
-    }
   }
 
   &__address {
