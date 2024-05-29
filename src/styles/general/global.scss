@@ -6,6 +6,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.section-wrapper {
+  border-radius: 32px;
+  width: 100%;
+
+  &--white {
+    background-color: var(--base100);
+
+  }
+  &--gradient {
+    background-image: var(--gradient_large);
+  }
+}
+
 .container {
   margin: 0 auto;
   padding: 0 80px;
