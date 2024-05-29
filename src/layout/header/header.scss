@@ -2,6 +2,8 @@
 
 // Default state
 .header {
+  position: absolute;
+  z-index: 10;
   color: var(--base100);
 
   &__inner {
