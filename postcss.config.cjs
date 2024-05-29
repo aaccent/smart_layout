@@ -12,6 +12,7 @@ module.exports = {
       limitMediaWidth: false,
       initWidth: [
         { width: 1680 },
+        { width: 380, mediaQuery: 'only screen and (max-width: 600px)' },
         { width: 700, mediaQuery: 'only screen and (max-width: 1000px)' },
       ],
     }),

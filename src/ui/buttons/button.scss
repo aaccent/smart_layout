@@ -1,18 +1,15 @@
 @use 'styles/utils';
 
-body {
-  background-color: gray;
-}
-
 .btn {
-  font: var(--text-btn);
-  min-width: 225px;
-  padding: 33.5px 0;
+  @include utils.text-btn;
+  width: 223px;
   position: relative;
   border-radius: 24px;
   display: flex;
-  align-items: center;
-
+  height: 78px;
+  justify-content: center;
+  box-sizing: content-box;
+  cursor: pointer;
 
   span {
     display: flex;
@@ -22,7 +19,14 @@ body {
     border-radius: 24px;
     gap: 10px;
     width: 204px;
+    top: -1px;
+    left: -1px;
+    bottom: -1px;
+    transition: width .3s ease-in-out;
 
+    @include utils.hover {
+      width: calc(100% + 2px);
+    }
 
     &::after {
       @include utils.bg-defaults;
@@ -31,45 +35,54 @@ body {
       background-image: url("assets/icons/arrow.svg");
       width: 13px;
       height: 12px;
+      position: relative;
+      top: -1px;
     }
   }
 
   &--blue {
     border: 1px solid hsla(0, 0%, 100%, 0.2);
+    color: var(--base100);
 
-    & span {
+    span {
       background-color: var(--primary);
+
+      &::after {
+        filter: brightness(10)
+      }
     }
   }
 
+  &--white {
+    border: 1px solid var(--base100);
+    color: var(--base300);
 
-  //&--blue {
-  //  color: var(--base100);
-  //
-  //  background-color: var(--primary);
-  //}
-  //
-  //
-  //  &::after {
+    span {
+      background-color: var(--base100);
+    }
+  }
 
-  //  }
-  //  &::before {
-  //    content: '';
-  //    position: absolute;
-  //    display: block;
-  //    top: 0;
-  //    bottom: 0;
-  //    left: 0;
-  //    width: calc(100% + 21px);
-  //    z-index: -1;
-  //    border-radius: 24px;
-  //
-  //    opacity: 20%;
-  //
-  //
-  //  &::after {
-  //    filter: brightness(10);
-  //  }
-  //}
+  @media only screen and (max-width: utils.$tablet1000) {
+    width: 100%;
 
+    span {
+      width: 95%;
+    }
+  }
+}
+
+.arrow-btn {
+  width: 100px;
+  height: 72px;
+  @include utils.bg-defaults;
+  border-radius: 24px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  background-image: url("assets/icons/double-arrow.svg");
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &--prev {
+    transform: rotate(180deg);
+  }
 }
