@@ -29,18 +29,62 @@
     position: absolute;
     inset: 0;
     z-index: 2;
-    max-width: 426px;
-    padding: 201px 80px 111px;
+    padding-bottom: 111px;
+    margin: 201px 80px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: var(--base100);
 
     .title {
       @include utils.text-header-100;
+
+      span {
+        opacity: .5;
+      }
     }
 
     .text {
-      @include utils.text-base-200-lg-100
+      @include utils.text-base-200-lg-100;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      p {
+        opacity: .7;
+        max-width: 432px;
+      }
+
+      .arrow {
+        border: 1px solid hsla(0, 0%, 100%, 1);
+        border-radius: 16px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          transform: rotate(90deg);
+          filter: brightness(6);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: utils.$tablet1000) {
+  .page-hero {
+    height: 100svh;
+    max-height: 591px;
+
+    &--content {
+      margin: 126px 25px 0;
+      padding-bottom: 45px;
+
+      .text .arrow {
+        display: none;
+      }
     }
   }
 }
