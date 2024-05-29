@@ -25,6 +25,12 @@ html {
   max-width: 1680px;
 }
 
+@media only screen and (max-width: utils.$tablet800) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
 .main-wrapper {
   position: relative;
   display: flex;
@@ -44,6 +50,7 @@ html {
 body {
   overflow-x: clip;
   @include utils.text-base-200-reg-100;
+  color: var(--base300);
 }
 
 html.disable-scroll {
@@ -58,10 +65,4 @@ html.disable-scroll {
 .swiper-wrapper,
 .swiper-slide {
   box-sizing: border-box !important;
-}
-
-@media only screen and (max-width: utils.$tablet1000) {
-  .container {
-    padding: 0 25px;
-  }
 }
