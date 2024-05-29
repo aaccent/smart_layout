@@ -12,6 +12,12 @@ html {
   max-width: 1680px;
 }
 
+@media only screen and (max-width: utils.$tablet800) {
+  .container {
+    padding: 0 25px;
+  }
+}
+
 .main-wrapper {
   position: relative;
   display: flex;
