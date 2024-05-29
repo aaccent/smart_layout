@@ -1,0 +1,84 @@
+@use "styles/utils";
+
+.benefits {
+  &__items {
+    @include utils.clear-list;
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  &__list-item {
+    position: relative;
+    padding: 48px !important;
+    display: block;
+    border-radius: 40px;
+    background: hsla(0, 0%, 100%, 0.1);
+  }
+
+  &__item-icon {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    @include utils.square(100px);
+    object-position: center;
+    object-fit: contain;
+  }
+
+  &__item-title {
+    margin-bottom: 45px;
+    max-width: 420px;
+    @include utils.text-header-400;
+  }
+
+  &__item-text {
+    max-width: 450px;
+    opacity: .5;
+    @include utils.text-base-200-lg-100;
+  }
+
+  &__numbers {
+    @include utils.clear-list;
+    padding: 80px 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 500px;
+    border: 1px solid hsl(0, 0%, 100%, .2);
+  }
+
+  &__number-item {
+    width: 100%;
+    padding: 0 125px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px dashed hsl(0, 0%, 100%, .3);
+
+    &:first-of-type{
+      padding-left: 0 !important;
+    }
+
+    &:last-of-type {
+      padding-right: 0 !important;
+      border-right: 0;
+    }
+  }
+
+  &__number-value {
+    @include utils.text-header-100;
+
+    span {
+      @include utils.text-header-300;
+    }
+  }
+
+  &__number-text {
+    max-width: 190px;
+    @include utils.text-base-400-reg-200;
+    opacity: .5;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
