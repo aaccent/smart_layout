@@ -6,6 +6,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.section-wrapper {
+  border-radius: 32px;
+  width: 100%;
+
+  &--white {
+    background-color: var(--base100);
+
+  }
+  &--gradient {
+    background-image: var(--gradient_large);
+  }
+}
+
 .container {
   margin: 0 auto;
   padding: 0 80px;
@@ -45,4 +58,10 @@ html.disable-scroll {
 .swiper-wrapper,
 .swiper-slide {
   box-sizing: border-box !important;
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .container {
+    padding: 0 25px;
+  }
 }
