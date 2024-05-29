@@ -45,7 +45,7 @@ mixin item-parser(item)
 header.header
     .container: .header__inner
         .header__logo-wrapper
-            +img(require('assets/static/logo.svg')).header__logo
+            +anchor('/'): +img(require('assets/static/logo.svg')).header__logo
             +btn('mobile-menu').header__menu-btn
         .header__mobile-wrapper
             nav.header__menu-wrapper: ul.header__menu
