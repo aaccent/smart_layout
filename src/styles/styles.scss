@@ -10,7 +10,12 @@
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/buttons/button';
+@use "ui/buttons/btn-inline";
 
+@use "ui/texts/email";
+@use "ui/texts/titles";
+
+@use "ui/elements/section-title-wrapper";
 
 // Page
 @use 'layout/header/header';
