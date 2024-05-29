@@ -74,7 +74,7 @@
 .arrow-btn {
   width: 100px;
   height: 72px;
-  @include utils.bg-defaults;
+  @include utils.bg-defaults(auto);
   border-radius: 24px;
   background-color: hsla(0, 0%, 100%, 0.1);
   background-image: url("assets/icons/double-arrow.svg");
