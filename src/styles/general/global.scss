@@ -7,15 +7,48 @@ html {
 }
 
 .section-wrapper {
-  border-radius: 32px;
+  position: relative;
+  margin: -34px 0;
   width: 100%;
+  border-radius: 32px;
+
+  &:first-child {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
   &--white {
+    z-index: 2;
+    padding: 80px 0;
     background-color: var(--base100);
-
   }
+
   &--gradient {
+    z-index: 1;
+    padding: 150px 0;
     background-image: var(--gradient_large);
+    color: var(--base100);
+  }
+
+  .section-wrapper + .section-wrapper {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .section-wrapper {
+    margin: -25px 0;
+
+    &--gradient {
+      padding: 70px 0;
+    }
   }
 }
 

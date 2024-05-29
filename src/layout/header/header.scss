@@ -1,7 +1,15 @@
 @use "styles/utils";
 
+.header + .main-wrapper > .main > *:first-child {
+  margin-top: 0;
+  padding-top: 120px;
+}
+
 // Default state
 .header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
   color: var(--base100);
 
   &__inner {
@@ -12,6 +20,7 @@
   }
 
   &__mobile-wrapper {
+    width: 100%;
     display: flex;
     align-items: center;
   }
@@ -161,7 +170,6 @@
 
   &__tel {
     @include utils.text-base-200-reg-100;
-    font: var(--text-base-200-reg-100);
   }
 
   &__tel-text {
@@ -183,7 +191,6 @@
 
   &__tel-text {
     @include utils.text-base-500-lg-100;
-    font: var(--text-base-500-lg-100);
   }
 }
 
@@ -263,6 +270,11 @@
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
+  .header + .main-wrapper > .main > *:first-child {
+    margin-top: 0;
+    padding-top: 85px;
+  }
+
   .header {
     &__inner {
       border-bottom: 0;
@@ -377,7 +389,7 @@
       padding: 0;
       width: 100%;
       gap: 15px;
-      font: 300 1.3rem/1.15;
+      font: 300 1.3rem/1.15 var(--geologica);
       border-bottom: 0;
 
       li {
@@ -401,7 +413,7 @@
     }
 
     &__tel-text {
-      font: 1.4rem/1.45;
+      font: 1.4rem/1.45 var(--geologica);
     }
 
     &__email {

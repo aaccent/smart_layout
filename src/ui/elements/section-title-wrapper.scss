@@ -1,0 +1,32 @@
+@use "styles/utils";
+
+.section-title-wrapper {
+  position: relative;
+  padding-bottom: 48px;
+  margin-bottom: 48px;
+  width: 100%;
+  border-bottom: 1px solid hsl(0, 0%, 100%, .2);
+
+  &::after {
+    position: absolute;
+    content: '';
+    left: 50%;
+    top: 100%;
+    translate: -50%;
+    width: 1px;
+    height: 24px;
+    background-color: hsl(0, 0%, 100%, .2);
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .section-title-wrapper {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid hsl(0, 0%, 100%, .15);
+
+    &::after {
+      display: none;
+    }
+  }
+}
