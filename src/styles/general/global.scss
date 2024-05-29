@@ -1,13 +1,28 @@
+@use "styles/utils";
+
 html {
   overflow-x: clip;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
+.section-wrapper {
+  border-radius: 32px;
+  width: 100%;
+
+  &--white {
+    background-color: var(--base100);
+
+  }
+  &--gradient {
+    background-image: var(--gradient_large);
+  }
+}
+
 .container {
   margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1230px;
+  padding: 0 80px;
+  max-width: 1680px;
 }
 
 .main-wrapper {
@@ -28,7 +43,7 @@ html {
 
 body {
   overflow-x: clip;
-  font: var(--text-base-200);
+  @include utils.text-base-200-reg-100;
 }
 
 html.disable-scroll {
@@ -43,4 +58,10 @@ html.disable-scroll {
 .swiper-wrapper,
 .swiper-slide {
   box-sizing: border-box !important;
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .container {
+    padding: 0 25px;
+  }
 }

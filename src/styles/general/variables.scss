@@ -34,21 +34,21 @@
   --header-400: 400 var(--header-400_fz)/1.15 var(--bowler);
 
   --text-base-100_fz: 3.2rem;
-  --text-base-100: 300 var(--text-base-100_fz)/1.25 var(--geologica);
+  --text-base-100-lg-100: 300 var(--text-base-100_fz)/1.25 var(--geologica);
 
   --text-base-200_fz: 2rem;
-  --text-base-200_lg: 300 var(--text-base-200_fz)/1.25 var(--geologica);
-  --text-base-200_rg: 400 var(--text-base-200_fz) var(--geologica);
+  --text-base-200-reg-100: 400 var(--text-base-200_fz) var(--geologica);
+  --text-base-200-lg-100: 300 var(--text-base-200_fz)/1.25 var(--geologica);
 
   --text-base-300_fz: 1.6rem;
-  --text-base-300: 300 var(--text-base-300_fz)/1.25 var(--geologica);
+  --text-base-300-lg-100: 300 var(--text-base-300_fz)/1.25 var(--geologica);
 
   --text-base-400_fz: 1.3rem;
-  --text-base-400_rg1: 400 max(1.15rem, var(--text-base-400_fz)) var(--geologica);
-  --text-base-400-rg2: 400 max(1.15rem, var(--text-base-400_fz))/1.45 var(--geologica);
+  --text-base-400-reg-100: 400 max(1.15rem, var(--text-base-400_fz)) var(--geologica);
+  --text-base-400-reg-200: 400 max(1.15rem, var(--text-base-400_fz))/1.45 var(--geologica);
 
   --text-base-500_fz: 1.1rem;
-  --text-base-500: 300 max(1rem, var(--text-base-500_fz)) var(--geologica);
+  --text-base-500-lg-100: 300 max(1rem, var(--text-base-500_fz)) var(--geologica);
 
   --text-btn_fz: 1.3rem;
   --text-btn: 400 var(--text-btn_fz) var(--bowler);
@@ -68,21 +68,15 @@
     --header-400: 400 var(--header-400_fz)/1.11 var(--bowler);
 
     --text-base-100_fz: 2.2rem;
-    --text-base-100: 300 var(--text-base-100_fz)/1.14 var(--geologica);
+    --text-base-100-lg-100: 300 var(--text-base-100_fz)/1.14 var(--geologica);
 
     --text-base-200_fz: 1.5rem;
-    --text-base-200_lg: 300 var(--text-base-200_fz)/1.15 var(--geologica);
-    --text-base-200_rg: 400 var(--text-base-200_fz) var(--geologica);
-
-    //--text-base-300_fz: 1.6rem;
-    //--text-base-300: 300 var(--text-base-300_fz)/1.25 var(--geologica);
+    --text-base-200-reg-100: 400 var(--text-base-200_fz) var(--geologica);
+    --text-base-200-lg-100: 300 var(--text-base-200_fz)/1.15 var(--geologica);
 
     --text-base-400_fz: 1.2rem;
-    --text-base-400_rg1: 400 max(1.15rem, var(--text-base-400_fz)) var(--geologica);
-    --text-base-400-rg2: 400 max(1.15rem, var(--text-base-400_fz))/1.45 var(--geologica);
-
-    //--text-base-500_fz: 1.1rem;
-    //--text-base-500: 300 max(1rem, var(--text-base-500_fz)) var(--geologica);
+    --text-base-400-reg-100: 400 max(1.15rem, var(--text-base-400_fz)) var(--geologica);
+    --text-base-400-reg-200: 400 max(1.15rem, var(--text-base-400_fz))/1.45 var(--geologica);
 
     --text-btn_fz: 1.2rem;
     --text-btn: 400 var(--text-btn_fz) var(--bowler);
