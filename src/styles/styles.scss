@@ -12,6 +12,8 @@
 @use 'ui/buttons/button';
 @use "ui/buttons/btn-inline";
 
+@use 'ui/elements/socials';
+
 @use "ui/texts/email";
 @use "ui/texts/titles";
 
@@ -24,3 +26,4 @@
 //Components
 @use 'components/page-hero/page-hero';
 @use "components/benefits/benefits";
+@use 'components/question-form/question-form';
