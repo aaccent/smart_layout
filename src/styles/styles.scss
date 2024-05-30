@@ -10,6 +10,7 @@
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/buttons/button';
+@use 'ui/elements/socials';
 
 @use "ui/texts/titles";
 
@@ -21,4 +22,4 @@
 
 //Components
 @use 'components/page-hero/page-hero';
-@use 'components/form/form';
+@use '../components/question-form/question-form';
