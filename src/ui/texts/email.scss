@@ -1,0 +1,15 @@
+@use "styles/utils";
+
+.email {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &::before {
+    content: '';
+    display: block;
+    @include utils.square(20px);
+    background-image: url('assets/icons/email.svg');
+    @include utils.bg-defaults;
+  }
+}

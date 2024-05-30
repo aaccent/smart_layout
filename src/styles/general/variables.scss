@@ -9,6 +9,11 @@
   --primary: hsl(216, 67%, 43%);
 }
 
+// Filter
+:root {
+  --filter-primary: brightness(0) saturate(100%) invert(28%) sepia(96%) saturate(906%) hue-rotate(191deg) brightness(95%) contrast(95%);
+}
+
 // Gradient
 :root {
   --gradient_large: linear-gradient(165.22deg, #022964 6.69%, #12438E 41.87%, #2965C1 103%);

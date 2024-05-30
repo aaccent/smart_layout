@@ -1,2 +1,57 @@
-footer.footer
-    .container
+include layout/utils
+
+-
+    var menu = [
+        {
+            title: 'Меню',
+            list: [
+                'Проекты',
+                'Акции',
+                'О компании',
+                'Блог',
+                'Контакты',
+            ]
+        },
+        {
+            title: 'Отрасли',
+            list: [
+                'Грузоперевозки',
+                'Сельхозтехника',
+                'Спецтехника',
+                'Легковое авто',
+            ]
+        },
+        {
+            title: 'Решения',
+            list: [
+                'Контроль учета топлива',
+                'Контроль обработки участка',
+                'Контроль обработки участка',
+                'Учет температуры',
+                'Контроль работы экскаваторов',
+                'Учет температуры',
+            ]
+        },
+    ]
+
+footer.footer: .container
+    .footer__top
+        .footer__logo-block
+            +anchor('/').footer__logo: +img(require('assets/static/logo.svg'))
+            span.footer__address г. Краснодар, ул. Дзержинского,#[br]дом 116/2, офис 4
+            +anchor('tel:8 (976) 543-21-00').footer__tel 8 (976) 543-21-00
+            span.footer__schedule Пн-Пт: с 9:00 до 19:00
+            +anchor('mailto:mail@smart.ru').footer__email.email mail@smart.ru
+        nav.footer__menu-block: ul.footer__menu
+            each item in menu
+                li.footer__menu-item
+                    +btn('footer-menu')(tabindex="0").footer__menu-item-title= item.title
+                    ul.footer__menu-item-list
+                        each subitem in item.list
+                            li: +anchor= subitem
+    .footer__bottom
+        +btn('scroll-up').footer__scroll-button наверх
+        .footer__policy
+            span © 2024, ООО «смарт»
+            +anchor политика конфиденциальности
+        +anchor('https://aaccent.ru/').footer__creators: +img(require('assets/static/aaccent-logo.svg'))

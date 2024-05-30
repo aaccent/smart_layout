@@ -1,0 +1,24 @@
+@use "styles/utils";
+
+.btn-inline {
+  padding: 13.5px 15px 11.5px;
+  display: flex;
+  border-radius: 50px;
+  background-color: hsl(0, 0%, 100%, .1);
+  @include utils.text-btn;
+  text-transform: uppercase;
+
+  @include utils.hover {
+    background-color: hsl(0, 0%, 100%, .2);
+    @include utils.transition(background-color);
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .btn-inline {
+    padding: 25px 20px 22px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}

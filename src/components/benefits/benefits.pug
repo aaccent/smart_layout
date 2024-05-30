@@ -1,0 +1,43 @@
+include layout/utils
+
+-
+  var items = [
+    {
+      title: 'Свое программное обеспечение',
+      text: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      icon: require('assets/icons/benefits-icon1.svg'),
+    },
+    {
+      title: 'Собственные модули мониторинга',
+      text: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      icon: require('assets/icons/benefits-icon2.svg'),
+    },
+    {
+      title: 'Единые стандарты обслуживания',
+      text: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      icon: require('assets/icons/benefits-icon3.svg'),
+    },
+    {
+      title: 'Собственные датчики уровня топлива',
+      text: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      icon: require('assets/icons/benefits-icon4.svg'),
+    },
+  ]
+
+  var numbers = [ '>10&nbsp;<span>лет</span>', '500&nbsp;<span>чел</span>', '>10&nbsp;<span>лет</span>' ]
+
+.benefits
+  .container
+    .section-title-wrapper
+      h2.section-title преимущества работы с нами
+    ul.benefits__items
+      each item in items
+        li.benefits__list-item
+          +img(item.icon)(role="presentation").benefits__item-icon
+          .benefits__item-title= item.title
+          .benefits__item-text: p= item.text
+    ul.benefits__numbers
+      each number in numbers
+        li.benefits__number-item
+          .benefits__number-value!= number
+          .benefits__number-text Доставка по всей территории Рф

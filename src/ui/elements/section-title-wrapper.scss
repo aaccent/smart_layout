@@ -23,6 +23,7 @@
   .section-title-wrapper {
     padding-bottom: 20px;
     margin-bottom: 25px;
+    border-bottom: 1px solid hsl(0, 0%, 100%, .15);
 
     &::after {
       display: none;

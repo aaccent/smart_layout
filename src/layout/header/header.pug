@@ -1,2 +1,66 @@
+include layout/utils
+
+-
+    var menu = [
+        { title: 'решения', num: 24 },
+        { title: 'продукты', num: 20 },
+        {
+            title: 'отрасли',
+            list: [
+                'ГЛОНАСС на легковой транспорт',
+                'Грузоперевозки и контроль топлива',
+                'Контроль сельхозтехники',
+                'Спецтехника и подсчет моточасов',
+                'Контроль топливозаправщиков',
+                'Установка ГЛОНАСС.Цены.',
+                'Примеры внедрения ГЛОНАСС',
+            ]
+        },
+        { title: 'О компании', isMain: true },
+        { title: 'Акции', isMain: true },
+        { title: 'проекты', isMain: true },
+        { title: 'Контакты', isMain: true },
+    ]
+
+mixin item-text-parser(item)
+    -
+        var attributes = {}
+
+        attributes.class = 'header__menu-item-text'
+        if (item.num) attributes['data-num'] = item.num.toString()
+
+    if 'list' in item
+        +wrapBreak: span&attributes(attributes)= item.title
+    else
+        +anchor&attributes(attributes)= item.title
+
+mixin item-parser(item)
+    -
+        var attributes = {}
+
+        if (item.isMain) attributes['data-main-menu'] = true
+
+    li.header__menu-item()&attributes(attributes): block
+
 header.header
-    .container
+    .container: .header__inner
+        .header__logo-wrapper
+            +anchor('/'): +img(require('assets/static/logo.svg')).header__logo
+            +btn('mobile-menu').header__menu-btn
+        .header__mobile-wrapper
+            nav.header__menu-wrapper: ul.header__menu
+                each item in menu
+                    +item-parser(item)
+                        +item-text-parser(item)
+
+                        if 'list' in item
+                            div.header__submenu
+                                ul.header__submenu-list: each subitem in item.list
+                                    li: +anchor= subitem
+                                +anchor.header__submenu-link перейти в раздел
+            .header__contacts-wrapper
+                +anchor('tel:8 (976) 543-21-00').header__tel 8 (976) 543-21-00
+                span.header__tel-text Пн-Пт: с 9:00 до 19:00
+                +anchor('mailto:mail@smart.ru').header__email.email mail@smart.ru
+                span.header__address г. Краснодар, ул. Дзержинского,#[br]дом 116/2, офис 4
+            +popupBtn('call').header__call-button.btn-inline оставить заявку
