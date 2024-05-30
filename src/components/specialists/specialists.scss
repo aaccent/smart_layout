@@ -1,0 +1,51 @@
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/effect-fade";
+@use "node_modules/swiper/modules/navigation";
+@use "styles/utils";
+
+.specialists {
+  .section-title-wrapper {
+    border-bottom-color: hsla(0, 0%, 18%, 0.15);
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .specialist {
+    &-image {
+      height: 410px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 40px;
+      margin-bottom: 25px;
+    }
+
+    &-name {
+      @include utils.text-header-400;
+    }
+
+    &-position {
+      @include utils.text-base-300-lg-100;
+      opacity: .5;
+      margin-bottom: 10px;
+    }
+
+    &-tel {
+      @include utils.text-base-300-lg-100;
+    }
+  }
+
+  .navigation-buttons {
+    margin-top: 48px;
+  }
+
+  @media only screen and (max-width: utils.$tablet1000) {
+    .specialist {
+      &-image {
+        height: 355px;
+      }
+    }
+  }
+}

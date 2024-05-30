@@ -1,0 +1,45 @@
+include layout/utils
+
+-
+  var specialists = [
+    {
+      name: 'Иванов Иван', position: 'Генеральный директор', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-1.png?as=webp')
+    },
+    {
+      name: 'петров александр', position: 'Коммерческий директор', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-2.png?as=webp')
+    },
+    {
+      name: 'Иванов Иван', position: 'Управляющий партнер', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-1.png?as=webp')
+    },
+    {
+      name: 'петров александр', position: 'Главный разработчик', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-2.png?as=webp')
+    },
+    {
+      name: 'Иванов Иван', position: 'Генеральный директор', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-1.png?as=webp')
+    },
+    {
+      name: 'петров александр', position: 'Главный разработчик', tel: '8 (927) 080-27-27',
+      photo: require('assets/content/specialist-2.png?as=webp')
+    },
+  ]
+
+.specialists
+  .container
+    h2.section-title Специалисты
+    .section-title-wrapper
+    .swiper
+      .swiper-wrapper
+        each item in specialists
+          .swiper-slide.specialist
+            +img(item.photo).specialist-image
+            .specialist-name #{item.name}
+            .specialist-position #{item.position}
+            .specialist-tel #{item.tel}
+      .navigation-buttons
+        .arrow-btn.arrow-btn--prev
+        .arrow-btn.arrow-btn--next

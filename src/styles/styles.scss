@@ -11,6 +11,7 @@
 @use 'ui/buttons/close-btn';
 @use 'ui/buttons/button';
 @use "ui/buttons/btn-inline";
+@use "ui/buttons/navigation-buttons";
 
 @use 'ui/elements/socials';
 
@@ -27,3 +28,4 @@
 @use 'components/page-hero/page-hero';
 @use "components/benefits/benefits";
 @use 'components/question-form/question-form';
+@use 'components/specialists/specialists';
