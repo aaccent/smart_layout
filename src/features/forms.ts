@@ -1,4 +1,4 @@
-const forms = document.querySelectorAll<HTMLFormElement>('.question-form[data-handler]')
+const forms = document.querySelectorAll<HTMLFormElement>('form[data-handler]')
 forms.forEach(form => {
 	form.addEventListener('submit', submitHandler)
 })
@@ -22,7 +22,7 @@ function submitHandler(e: SubmitEvent) {
 	}).then((res) => {
 		if (!res.ok) {
 			return console.error(
-				'Error while submitting question-form\n',
+				'Error while submitting form\n',
 				'FormData:\n', formData, '\n',
 				' Response:\n', res,
 			)
