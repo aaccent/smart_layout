@@ -89,9 +89,17 @@
     height: 100svh;
     max-height: 591px;
 
+    &:has(.mode-content) {
+      height: 337px;
+    }
+
     &__content {
       margin: 126px 25px 0;
       padding-bottom: 45px;
+
+      &.mode-content {
+        flex-direction: column;
+      }
     }
 
     &__text .arrow {
