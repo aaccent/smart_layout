@@ -1,0 +1,28 @@
+include layout/utils
+
+section.section.question-form
+  .container
+    .section-title-wrapper
+    .question-form__wrapper
+      .question-form__content
+        .title ещё остались вопросы?
+        .text Жирмунский, однако, настаивал, что синхрония доступна. Анжамбеман семантически отражает хорей. Представленный лексико-семантический анализ
+        .socials
+          +anchor('#').socials__img
+            +img(require('assets/icons/TG.svg'))
+          +anchor('#').socials__img
+            +img(require('assets/icons/VK.svg'))
+          +anchor('#').socials__img
+            +img(require('assets/icons/ok.svg'))
+          +anchor('#').socials__img
+            +img(require('assets/icons/youtube.svg'))
+      form(autocomplete='off')
+        .question-form__inputs
+          input(name='name' type='text' required=true placeholder='ИМЯ*')
+          input(name='tel' type='tel' required=true placeholder='Телефон*')
+          textarea(name='question' placeholder='Ваш вопрос?')
+        .question-form__footer
+          button(type='submit').btn.btn--white
+            span Отправить
+          p Нажимая на кнопку «Отправить» вы подтверждаете своё согласие
+            +anchor('#') с политикой конфиденциальности
