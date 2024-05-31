@@ -1,3 +1,4 @@
+@use 'node_modules/@fancyapps/ui/dist/fancybox.css';
 @use 'general/_normalize.css';
 @use 'general/reset';
 @use 'general/variables';
@@ -30,3 +31,4 @@
 @use 'components/question-form/question-form';
 @use 'components/specialists/specialists';
 @use 'components/content/content';
+@use 'components/gallery/gallery';
