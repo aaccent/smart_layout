@@ -79,11 +79,16 @@
   height: 72px;
   @include utils.bg-defaults(auto);
   border-radius: 24px;
-  background-color: hsla(0, 0%, 100%, 0.1);
-  background-image: url("assets/icons/double-arrow.svg");
+  background-color: var(--base100);
+  background-image: url("assets/icons/double-arrow__black.svg");
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
+
+  &--next {
+    transform: rotate(0);
+  }
 
   &--prev {
     transform: rotate(180deg);
