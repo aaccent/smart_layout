@@ -1,0 +1,111 @@
+@use 'styles/utils';
+
+.call-popup {
+  &__inner {
+    background-color: var(--base100);
+    max-width: 1394px;
+    width: 100%;
+    border-radius: 32px;
+    padding: 75px 0 80px;
+  }
+
+  &__form {
+    max-width: 613px;
+    width: 100%;
+
+    &-title {
+      @include utils.text-header-200;
+      margin-bottom: 24px;
+      color: var(--base300);
+    }
+
+    &-text {
+      @include utils.text-base-200-lg-100;
+      margin-bottom: 60px;
+      color: var(--base300);
+    }
+
+    form {
+      input, textarea {
+        border-bottom-color: hsla(0, 0%, 18%, 0.2);
+        color: var(--base300);
+
+        &::placeholder {
+          color: hsla(0, 0%, 18%, 1);
+        }
+      }
+    }
+
+    &-footer {
+      margin-top: 60px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn--blue {
+      border-color: hsla(0, 0%, 84%, 1);
+    }
+
+    &-agreement {
+      @include utils.text-base-300-lg-100;
+      color: hsla(0, 0%, 18%, 0.5);
+      width: 275px;
+
+      a {
+        color: var(--base300);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 80px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: hsla(0, 0%, 95%, 1);
+    border-radius: 32px;
+    width: 621px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 430px;
+    }
+  }
+
+  @media only screen and (max-width: utils.$tablet1000) {
+    &__inner {
+      max-width: 100%;
+      padding: 25px 0;
+      border-radius: 20px;
+    }
+
+    &__form-title {
+      margin-bottom: 10px;
+    }
+
+    &__form-text {
+      margin-bottom: 35px;
+    }
+
+    &__form-footer {
+      margin-top: 25px;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
