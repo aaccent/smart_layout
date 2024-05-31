@@ -46,6 +46,10 @@ html {
   .section-wrapper {
     margin: -25px 0;
 
+    &--white {
+      padding: 25px 0;
+    }
+
     &--gradient {
       padding: 70px 0;
     }
