@@ -7,16 +7,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 72px;
+  height: 72px;
 
   &::before, &::after {
     content: '';
     position: absolute;
-    width: 2.6px;
-    height: 26px;
+    width: 1.5px;
+    height: 14px;
     border-radius: 4px;
-    background-color: #909090;
+    background-color: var(--base100);
     @include utils.transition(background-color);
   }
 
@@ -26,13 +26,6 @@
 
   &::after {
     transform: rotate(-45deg);
-  }
-
-  &:hover {
-    &::before,
-    &::after {
-      background-color: var(--green-light_color);
-    }
   }
 }
 
@@ -51,12 +44,12 @@
 
 @media only screen and (max-width: 450px) {
   .close-btn {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
 
     &::after,
     &::before {
-      height: 20px;
+      height: 10px;
     }
   }
 }

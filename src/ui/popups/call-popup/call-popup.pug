@@ -2,3 +2,19 @@ include layout/utils
 include features/popup/popup
 
 +popup("call", "call-popup")
+  .container
+    .call-popup__content
+      .call-popup__form
+        .call-popup__form-title оставить заявку
+        .call-popup__form-text Жирмунский, однако, настаивал, что синхрония доступна. Анжамбеман семантически отражает хорей.
+        form#popup-form
+          .inputs
+            input(name='name' type='text' placeholder='ИМЯ*' required)
+            input(name='tel' type='tel' placeholder='Телефон*' required)
+          .call-popup__form-footer
+            button.btn.btn--blue
+              span Отправить
+            p.call-popup__form-agreement Нажимая на кнопку «Отправить» вы подтверждаете своё согласие
+              +anchor('#') с политикой конфиденциальности
+      .call-popup__image
+        +img(require('assets/content/call-popup-image.png?as=webp'))
