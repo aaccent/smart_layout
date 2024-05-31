@@ -35,11 +35,11 @@ include layout/utils
     .swiper
       .swiper-wrapper
         each item in specialists
-          .swiper-slide.specialist
-            +img(item.photo).specialist-image
-            .specialist-name #{item.name}
-            .specialist-position #{item.position}
-            .specialist-tel #{item.tel}
+          .swiper-slide.specialists__item
+            +img(item.photo).specialists__item-image
+            .specialists__item-name #{item.name}
+            .specialists__item-position #{item.position}
+            .specialists__item-tel #{item.tel}
       .navigation-buttons
         .arrow-btn.arrow-btn--prev
         .arrow-btn.arrow-btn--next

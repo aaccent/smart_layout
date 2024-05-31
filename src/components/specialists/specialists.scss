@@ -12,7 +12,7 @@
     }
   }
 
-  .specialist {
+  &__item {
     &-image {
       height: 410px;
       width: 100%;
@@ -42,7 +42,7 @@
   }
 
   @media only screen and (max-width: utils.$tablet1000) {
-    .specialist {
+    &__item {
       &-image {
         height: 355px;
       }
