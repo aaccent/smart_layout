@@ -1,7 +1,7 @@
 import Swiper from 'swiper'
 import { Navigation } from 'swiper/modules'
 
-new Swiper('.specialists .swiper', {
+new Swiper('.gallery .swiper', {
     modules: [ Navigation ],
     navigation: {
       nextEl: '.arrow-btn--next',
@@ -16,7 +16,7 @@ new Swiper('.specialists .swiper', {
     },
     breakpoints: {
       1000: {
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 16,
       },
     },

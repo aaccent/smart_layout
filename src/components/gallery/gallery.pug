@@ -1,0 +1,25 @@
+include layout/utils
+
+-
+    var gallery = [
+      'assets/content/gallery-item1.jpg?as=webp',
+      'assets/content/gallery-item2.jpg?as=webp',
+      'assets/content/gallery-item3.jpg?as=webp',
+      'assets/content/gallery-item2.jpg?as=webp',
+      'assets/content/gallery-item3.jpg?as=webp',
+      'assets/content/gallery-item1.jpg?as=webp',
+      'assets/content/gallery-item1.jpg?as=webp',
+    ]
+
+.gallery
+  .container
+    .section-title ГАЛЕРЕЯ
+    .section-title-wrapper
+    .swiper
+      .swiper-wrapper
+        each item in gallery
+          .swiper-slide.gallery__item
+            +anchor(item)(data-fancybox='gallery'): +img(require(item))
+      .navigation-buttons
+        .arrow-btn.arrow-btn--prev
+        .arrow-btn.arrow-btn--next

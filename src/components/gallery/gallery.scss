@@ -1,0 +1,53 @@
+@use 'styles/utils';
+
+.gallery {
+  .section-title {
+    @include utils.text-header-100;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .section-title-wrapper {
+    border-bottom-color: hsla(0, 0%, 18%, 0.15);
+
+    &::after {
+      content: none;
+    }
+  }
+
+  .swiper-wrapper {
+    left: 0;
+  }
+
+  &__item {
+    max-width: 496px;;
+
+    img {
+      width: 100%;
+      border-radius: 40px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .navigation-buttons {
+    margin-top: 48px;
+  }
+
+  @media only screen and (max-width: utils.$tablet1000) {
+    .section-title {
+      text-align: left;
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    &__item {
+      img {
+        max-width: 310px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
