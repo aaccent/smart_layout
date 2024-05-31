@@ -7,7 +7,8 @@ mixin page-hero(props)
       text: '',
       picture: '',
       mobPicture: '',
-      count: ''
+      count: '',
+      mode: false,
     }, props || {})
 
   .section.page-hero
@@ -15,11 +16,17 @@ mixin page-hero(props)
       picture
         source(srcset=props.mobPicture media='(max-width: 1000px)')
         +img(props.picture).page-hero__image
-    .page-hero__content
-      .title=props.title
-        if props.count
-          span.count <br>/#{props.count}
-      .text
-        p #{props.text}
-        .arrow
-          +img(require('assets/icons/arrow.svg'))
+    if props.mode
+      .page-hero__content.mode-content
+        .page-hero__title=props.title
+        .page-hero__text
+          p #{props.text}
+    else
+      .page-hero__content
+        .page-hero__title=props.title
+          if props.count
+            span.count <br>/#{props.count}
+        .page-hero__text
+          p #{props.text}
+          .arrow
+            +img(require('assets/icons/arrow.svg'))
