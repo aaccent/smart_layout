@@ -42,6 +42,10 @@
   }
 
   @media only screen and (max-width: utils.$tablet1000) {
+    .swiper {
+      overflow: visible;
+    }
+
     &__item {
       &-image {
         height: 355px;

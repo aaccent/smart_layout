@@ -3,6 +3,7 @@
 @use 'general/variables';
 @use 'general/fonts';
 @use 'general/global';
+@use 'node_modules/@fancyapps/ui/dist/fancybox.css';
 
 // Popup
 @use 'features/popup/popup';
@@ -29,3 +30,4 @@
 @use "components/benefits/benefits";
 @use 'components/question-form/question-form';
 @use 'components/specialists/specialists';
+@use 'components/gallery/gallery';
