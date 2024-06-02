@@ -77,20 +77,31 @@
 .arrow-btn {
   width: 100px;
   height: 72px;
-  @include utils.bg-defaults(auto);
   border-radius: 24px;
   background-color: var(--base100);
-  background-image: url("assets/icons/double-arrow__black.svg");
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-
-  &--next {
-    transform: rotate(0);
+  &::after {
+    @include utils.bg-defaults(auto);
+    content: '';
+    display: block;
+    background-image: url("assets/icons/double-arrow__black.svg");
+    width: 13px;
+    height: 12px;
   }
 
-  &--prev {
+  &--next::after {
+
+  }
+
+  &--prev::after {
+    content: '';
+    background-image: url("assets/icons/double-arrow__black.svg");
     transform: rotate(180deg);
   }
 }
