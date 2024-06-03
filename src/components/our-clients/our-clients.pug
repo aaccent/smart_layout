@@ -1,0 +1,28 @@
+include layout/utils
+
+-
+  var clients =[
+    require('assets/content/client1.png'),
+    require('assets/content/client2.png'),
+    require('assets/content/client3.png'),
+    require('assets/content/client1.png'),
+    require('assets/content/client1.png'),
+    require('assets/content/client2.png'),
+    require('assets/content/client2.png'),
+    require('assets/content/client1.png'),
+    require('assets/content/client2.png'),
+    require('assets/content/client3.png'),
+    require('assets/content/client1.png'),
+    require('assets/icons/cube.svg'),
+    require('assets/content/solution1.png'),
+    require('assets/content/call-popup-image.png'),
+  ]
+
+
+.our-clients
+  h2.our-clients__title наши клиенты лидеры в своих сферах
+  .swiper.our-clients__list
+    .swiper-wrapper
+      each item in clients
+        .swiper-slide.our-clients__item
+          +img(item)
