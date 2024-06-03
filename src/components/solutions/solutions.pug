@@ -1,0 +1,61 @@
+include layout/utils
+
+-
+    var solutions = [
+      {
+        title: 'Контроль учета топлива',
+        image: require('assets/content/solution1.png?as=webp')
+      },
+
+      {
+        title: 'контроль обработки участка',
+        image: require('assets/content/solution2.png?as=webp')
+      },
+
+      {
+        title: 'учет температуры в рефрежираторах',
+        image: require('assets/content/solution3.png?as=webp')
+      },
+
+      {
+        title: 'Контроль работы экскаваторов',
+        image: require('assets/content/solution4.png?as=webp')
+      },
+
+      {
+        title: 'Контроль учета топлива',
+        image: require('assets/content/solution3.png?as=webp')
+      },
+
+      {
+        title: 'Контроль учета топлива',
+        image: require('assets/content/solution2.png?as=webp')
+      },
+    ]
+
+
+.solutions
+  .container
+    .solutions__header
+      .section-title мы предлагаем готовые решения для бизнеса
+      .solutions__text Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы
+    .solutions__content
+      .section-title-wrapper
+      .swiper.solutions__list
+        .swiper-wrapper
+          each item in solutions
+            +anchor().swiper-slide.solutions__item
+              +img(item.image)
+              .solutions__item-title=item.title
+              button.solutions__item-button.btn-inline Подробнее
+        .navigation-buttons
+          .arrow-btn.arrow-btn--prev
+          .arrow-btn.arrow-btn--next
+    +anchor.solutions__button.btn.btn--blue
+      span Смотреть все
+
+
+
+
+
+
