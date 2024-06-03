@@ -1,0 +1,29 @@
+include layout/utils
+
+.about-company
+  .about-company__image: picture
+    source(srcset=require('assets/content/mobile-about-bg.jpg?as=webp') media='(max-width:1000px)')
+    source(src=require('assets/content/about-bg.jpg'))
+    +img(require('assets/content/about-bg.jpg'))
+  .container
+    .about-company__header
+      .section-title О компании
+      .about-company__description Целевая аудитория, следовательно, раскручивает пак-шот. Коммуникация, пренебрегая деталями, создает конвергентный ребрендинг. Ребрендинг стремительно нейтрализует портрет
+    .about-company__footer
+      .about-company__rating
+        +anchor.about-company__rating-item
+          +img(require('assets/content/yandex.png?as=webp'))
+          .rating
+            .rating__name Яндекс карты
+            .rating__count
+              .rating__count-number(data-rating='4.9') 4.9
+              .rating__count-stars
+        +anchor.about-company__rating-item
+          +img(require('assets/content/2gis.png?as=webp'))
+          .rating
+            .rating__name 2гис
+            .rating__count
+              .rating__count-number(data-rating='4.9') 4.9
+              .rating__count-stars
+      +anchor.btn.btn--white
+        span О компании

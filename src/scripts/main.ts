@@ -8,5 +8,6 @@ import 'components/specialists/specialists'
 import 'components/gallery/gallery'
 import 'components/main-hero/main-hero'
 import 'components/solutions/solutions.js'
+import 'components/about-company/about-company.js'
 
 import 'features/fancybox'
