@@ -1,7 +1,6 @@
 extends layout/page
 
 append main
-    include components/main-hero/main-hero
     include components/page-hero/page-hero
     +page-hero({
         title: 'проекты',
@@ -20,3 +19,4 @@ append main
     .section-wrapper.section-wrapper--white
         include components/specialists/specialists
         include components/content/content
+        include components/seo/seo
