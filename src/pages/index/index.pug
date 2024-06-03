@@ -1,9 +1,7 @@
 extends layout/page
 
-append head
-    link(href=require('./styles.scss') rel="stylesheet")
-
 append main
+    include components/main-hero/main-hero
     include components/page-hero/page-hero
     +page-hero({
         title: 'проекты',
@@ -12,6 +10,8 @@ append main
         mobPicture: 'assets/content/mob-page-hero-img.jpg',
         mode: true
     })
+    .section-wrapper.section-wrapper--white
+        include components/solutions/solutions
     .section-wrapper.section-wrapper--gradient
         include components/products/products
         include components/benefits/benefits
@@ -20,7 +20,3 @@ append main
     .section-wrapper.section-wrapper--white
         include components/specialists/specialists
         include components/content/content
-
-
-append scripts
-    script(src=require('./main.ts'))
