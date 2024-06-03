@@ -2,7 +2,6 @@
 
 .header + .main-wrapper > .main > *:first-child {
   margin-top: 0;
-  padding-top: 120px;
 }
 
 // Default state
@@ -272,7 +271,6 @@
 @media only screen and (max-width: utils.$tablet1000) {
   .header + .main-wrapper > .main > *:first-child {
     margin-top: 0;
-    padding-top: 85px;
   }
 
   .header {
