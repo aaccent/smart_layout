@@ -1,0 +1,128 @@
+@use "node_modules/swiper/swiper";
+@use "styles/utils";
+
+.software {
+  padding-bottom: 150px;
+
+  .section-title {
+    width: 100%;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  &__item {
+    background-color: hsla(216, 87%, 55%, 1);
+    border-radius: 32px;
+    position: relative;
+    z-index: 5;
+    height: 365px;
+    padding: 32px 32px 20px;
+    flex-direction: column;
+    display: flex;
+    color: var(--base100);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: -1px;
+      background-color: hsl(216, 62%, 31%);
+      z-index: -10;
+      border-radius: 32px;
+      border-top-right-radius: 60px;
+    }
+
+    &-title {
+      @include utils.text-header-400;
+      margin-bottom: 15px;
+    }
+
+    &-description {
+      @include utils.text-base-300-lg-100;
+      opacity: .5;
+    }
+
+    &._turquoise {
+      background-color: hsla(184, 87%, 55%, 1);
+    }
+
+    &._light-green {
+      background-color: hsla(72, 87%, 55%, 1);
+    }
+
+    &._purple {
+      background-color: hsla(306, 87%, 55%, 1);
+    }
+
+    &._yellow {
+      background-color: hsla(36, 87%, 55%, 1);
+    }
+
+    &._red {
+      background-color: hsla(11, 87%, 55%, 1);
+    }
+
+    &._green {
+      background-color: hsla(133, 87%, 55%, 1);
+    }
+
+    &-footer {
+      margin-top: auto;
+      border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+    }
+
+    &-button {
+      background-color: transparent;
+      margin-left: -13px;
+      margin-top: 5px;
+      opacity: .5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        @include utils.bg-defaults(auto);
+        content: '';
+        display: block;
+        border: 1px solid hsla(0, 0%, 100%);
+        border-radius: 8px;
+        width: 24px;
+        height: 24px;
+        background-image: url("assets/icons/arrow.svg");
+        filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(493%) hue-rotate(215deg) brightness(118%) contrast(100%)
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .software {
+    padding-bottom: 70px;
+    &__list {
+      display: flex;
+      gap: 0;
+    }
+
+    &__item {
+      width: 310px;
+      padding: 20px;
+      border-radius: 15px;
+
+      &::after {
+        border-radius: 15px;
+        border-top-right-radius: 35px;
+      }
+
+      &-button {
+        margin-top: 10px;
+        margin-left: 0;
+        padding: 5px;
+
+      }
+    }
+  }
+}
