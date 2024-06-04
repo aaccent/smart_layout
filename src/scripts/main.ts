@@ -12,5 +12,6 @@ import 'components/seo/seo.js'
 import 'components/reviews/reviews'
 import 'components/our-clients/our-clients.js'
 import 'components/projects/projects.js'
+import 'components/about-company/about-company.js'
 
 import 'features/fancybox'
