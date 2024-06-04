@@ -1,0 +1,50 @@
+include layout/utils
+
+-
+  var projects = [
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+
+  ]
+
+.projects
+  .container
+    .projects__header
+      .section-title реализованные проекты
+      .projects__text Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы
+    .projects__content
+      .section-title-wrapper
+      .swiper.projects__list
+        .swiper-wrapper
+          each item in projects
+            +anchor.swiper-slide.projects__item
+              +img(item.image).projects__item-image
+              .projects__item-wrapper
+                .projects__item-info
+                  .projects__item-title=item.title
+                  .projects__item-description=item.description
+                .projects__item-button.btn-inline Подробнее
+    .navigation-buttons
+      .arrow-btn.arrow-btn--prev
+      .arrow-btn.arrow-btn--next
+  button.projects__button.btn.btn--blue
+    span Смотреть все
+
