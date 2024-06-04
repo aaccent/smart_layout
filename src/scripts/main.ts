@@ -9,6 +9,7 @@ import 'components/gallery/gallery'
 import 'components/main-hero/main-hero'
 import 'components/solutions/solutions.js'
 import 'components/seo/seo.js'
+import 'components/reviews/reviews'
 import 'components/our-clients/our-clients.js'
 
 import 'features/fancybox'

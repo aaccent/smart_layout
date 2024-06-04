@@ -1,0 +1,41 @@
+include layout/utils
+
+-
+  var reviews = [
+    {
+      name: 'Александра бортникова',
+      who: 'Менеджер мониторинга',
+      image: require('assets/content/review-item.jpg?as=webp'),
+      icon: require('assets/icons/gazprom.svg'),
+      date: '20 апреля, 2024',
+      text: 'Можно предположить, что опросная анкета все еще интересна для многих. Медиавес пока плохо специфицирует эмпирический контент. Медиабизнес одновременно отражает креатив. Эластичность спроса синхронизирует ролевой BTL. Диверсификация бизнеса без оглядки на авторитеты актаульна как никогда.'
+    },
+    {
+      name: 'Евгений Маркаров',
+      who: 'Управляющий',
+      image: require('assets/content/specialist-1.png?as=webp'),
+      icon: require('assets/icons/megafon.svg'),
+      date: '20 января, 2024',
+      text: 'Можно предположить, что опросная анкета все еще интересна для многих. Медиавес пока плохо специфицирует эмпирический контент. Медиабизнес одновременно отражает креатив. '
+    },
+  ]
+
+.reviews
+  .container
+    h2.section-title отзывы
+    .section-title-wrapper
+    .swiper.reviews__list
+      .swiper-wrapper
+        each item in reviews
+          .swiper-slide.reviews__item
+            +img(item.image).reviews__item-image
+            .reviews__item-content
+              .reviews__item-header
+                .reviews__item-name=item.name
+                  span.reviews__item-who=item.who
+                +img(item.icon).reviews__item-icon
+              .reviews__item-text=item.text
+              .reviews__item-date=item.date
+      .navigation-buttons
+        .arrow-btn.arrow-btn--prev
+        .arrow-btn.arrow-btn--next
