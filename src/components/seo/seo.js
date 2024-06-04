@@ -1,9 +1,9 @@
 const seoControls = document.querySelector('.seo__controls')
-const seoButton = seoControls.querySelector('.seo button');
+const seoButton = seoControls?.querySelector('.seo button');
 const seoText = document.querySelector('.seo .seo__text');
-const arrow = seoControls.querySelector('.seo .seo__controls-arrow ');
+const arrow = seoControls?.querySelector('.seo .seo__controls-arrow ');
 
-seoControls.addEventListener('click', () => {
+seoControls?.addEventListener('click', () => {
     const isSeoTextOpened = seoText.classList.contains('_opened');
 
     if (isSeoTextOpened) {

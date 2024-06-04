@@ -10,4 +10,6 @@ import 'components/main-hero/main-hero'
 import 'components/solutions/solutions.js'
 import 'components/seo/seo.js'
 
+import 'pages/about/certificates/certificates.js'
+
 import 'features/fancybox'

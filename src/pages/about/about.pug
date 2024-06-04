@@ -1,0 +1,13 @@
+extends layout/page
+
+append main
+    include components/page-hero/page-hero
+    +page-hero({
+      title: 'проекты',
+      text: 'Целевая аудитория, следовательно, раскручивает пак-шот. Экономия времени и ресурсов, качественный результат, быстрое внедрение и повышение.',
+      picture: 'assets/content/page-hero-image.png',
+      mobPicture: 'assets/content/mob-page-hero-img.jpg',
+      mode: true
+    })
+    .section-wrapper.section-wrapper--gradient
+      include pages/about/certificates/certificates

@@ -1,0 +1,101 @@
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/navigation";
+@use "styles/utils";
+
+.certificates {
+  &__title {
+    @include utils.text-header-100;
+    text-align: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 40px;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: var(--base100);
+    height: 368px;
+
+    &-type {
+      @include utils.text-base-500-lg-100;
+      text-transform: uppercase;
+      background-color: hsla(0, 0%, 100%, 0.1);
+      padding: 10.5px 12px;
+      border-radius: 12px;
+      width: fit-content;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      @include utils.text-header-400;
+    }
+
+    &-footer {
+      margin-top: auto;
+      border-top: 1px solid hsla(0, 0%, 100%, .15);
+      padding-top: 12px;
+    }
+
+    &-button {
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      opacity: .5;
+
+
+      &::after {
+        @include utils.bg-defaults(auto);
+        content: '';
+        display: block;
+        width: 24px;
+        height: 24px;
+        border: 1px solid hsla(0, 0%, 100%);
+        border-radius: 8px;
+        background-image: url("assets/icons/arrow.svg");
+        filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(493%) hue-rotate(215deg) brightness(118%) contrast(100%);
+      }
+    }
+  }
+
+  .navigation-buttons {
+    margin-top: 48px;
+
+    .arrow-btn {
+      background-color: hsla(0, 0%, 100%, 0.1);
+
+      &::after {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(11%) saturate(493%) hue-rotate(215deg) brightness(118%) contrast(100%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .certificates {
+
+    .swiper {
+      overflow: visible;
+    }
+
+    &__item {
+      padding: 20px;
+      min-width: 330px;
+      border-radius: 25px;
+
+      &-footer {
+        padding: 0;
+      }
+
+      &-button {
+        padding: 15px 0 3px;
+      }
+    }
+  }
+
+  .navigation-buttons {
+    display: none;
+  }
+}
