@@ -1,0 +1,125 @@
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/effect-fade";
+@use "node_modules/swiper/modules/navigation";
+@use 'node_modules/swiper/modules/pagination';
+@use "styles/utils";
+
+.reviews {
+
+  &__list {
+    position: relative;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    border-radius: 60px;
+  }
+
+  &__item {
+    padding: 60px 60px 84px;
+    display: flex;
+    gap: 60px;
+
+    &-image {
+      max-width: 169px;
+      width: 100%;
+      height: 220px;
+      border-radius: 100px;
+      object-position: center;
+      object-fit: cover;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px dashed hsla(0, 0%, 100%, 0.15);
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+    }
+
+    &-name {
+      @include utils.text-header-400;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-who {
+      @include utils.text-base-200-lg-100;
+      color: hsla(0, 0%, 100%, .5);
+    }
+
+    &-icon {
+      max-height: 80px;
+      height: 100%;
+    }
+
+    &-text {
+      @include utils.text-base-100-lg-100;
+      color: hsla(0, 0%, 100%, .5);
+      margin-bottom: 83px;
+    }
+
+    &-date {
+      @include utils.text-base-200-lg-100;
+      color: hsla(0, 0%, 100%, .5);
+    }
+  }
+
+  .navigation-buttons {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: auto;
+    z-index: 3;
+
+    .arrow-btn {
+      background-color: hsla(0, 0%, 100%, 0.1);
+
+      &::after {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(189deg) brightness(105%) contrast(105%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .reviews {
+
+    &__list {
+      border-radius: 0;
+      background-color: transparent;
+    }
+
+    &__item {
+      padding: 20px;
+      background-color: hsla(0, 0%, 100%, 0.1);
+      border-radius: 25px;
+      min-height: 440px;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-header {
+        padding-bottom: 18px;
+        margin-bottom: 17px;
+      }
+
+      &-image, &-icon {
+        display: none;
+      }
+
+      &-text {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+      }
+
+      &-date {
+        margin-top: auto;
+      }
+    }
+  }
+
+  .navigation-buttons {
+    display: none;
+  }
+}
