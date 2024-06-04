@@ -1,0 +1,56 @@
+@use "node_modules/swiper/swiper";
+@use 'node_modules/swiper/modules/autoplay';
+@use "styles/utils";
+
+.our-clients {
+  margin-top: 150px;
+
+  .swiper-wrapper {
+    transition-timing-function: linear;
+  }
+
+  &__title {
+    @include utils.text-header-100;
+    max-width: 1104px;
+    width: 100%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 80px;
+  }
+
+  &__item {
+    width: 240px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid hsla(0, 0%, 100%, 0.2);
+
+    img {
+      max-height: 90px;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(189deg) brightness(105%) contrast(105%);
+      opacity: .6;
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .our-clients {
+    &__title {
+      font-size: 3.4rem;
+      margin-bottom: 35px;
+    }
+    &__item {
+      height: 160px;
+      width: 160px;
+
+      img {
+        max-height: 60px;
+        max-width: 100px;
+      }
+    }
+  }
+}
