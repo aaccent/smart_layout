@@ -18,7 +18,7 @@ html {
     border-top-right-radius: 0;
   }
 
-  &:last-child {
+  &:last-child:not(.section-wrapper--white) {
     margin-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
