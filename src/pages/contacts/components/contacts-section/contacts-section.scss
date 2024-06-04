@@ -1,5 +1,28 @@
 @use "styles/utils";
 
 .contacts {
+  &__top {
+    padding: 40px 40px 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 28px;
+    background: var(--base200);
 
+    &-tel-wrapper {
+      display: flex;
+      gap: 6px;
+      flex-direction: column;
+    }
+
+    &-tel {
+
+    }
+
+    &-address {
+      max-width: 240px;
+      width: 100%;
+      @include utils.text-base-200-lg-100;
+    }
+  }
 }
