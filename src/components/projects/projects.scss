@@ -1,0 +1,136 @@
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/navigation";
+@use "styles/utils";
+
+.projects {
+  position: relative;
+
+  &__header {
+    display: flex;
+    gap: 61px;
+  }
+
+  &__text {
+    @include utils.text-base-200-lg-100;
+    color: var(--base300);
+    opacity: .5;
+    max-width: 343px;
+    width: 100%;
+  }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 80px;
+    border-color: hsla(0, 0%, 18%, .2)
+  }
+
+  .section-title-wrapper {
+    border-bottom-color: hsla(0, 0%, 18%, .15);
+
+    &::after {
+      background-color: hsla(0, 0%, 18%, .15);
+    }
+  }
+
+  &__item {
+    height: 540px;
+    position: relative;
+    color: var(--base100);
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50px;
+    }
+
+    &-wrapper {
+      position: absolute;
+      inset: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &-info {
+      border-bottom: 1px solid var(--base100);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    &-title {
+      @include utils.text-header-300;
+      margin-bottom: 6px;
+    }
+
+    &-description {
+      @include utils.text-base-200-lg-100;
+      max-width: 354px;
+      width: 100%;
+    }
+
+    &-button {
+      background-color: transparent;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      align-items: center;
+      padding: 0;
+
+      &::after {
+        @include utils.bg-defaults(auto);
+        content: '';
+        display: block;
+        background-color: var(--base100);
+        background-image: url("assets/icons/arrow.svg");
+        width: 13px;
+        height: 12px;
+        padding: 12px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .navigation-buttons {
+    margin-top: 48px;
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+
+  .projects {
+
+    &__button.btn.btn--blue {
+      position: relative;
+      width: 330px;
+      left: 25px;
+      margin-top: 25px
+    }
+
+    &__header {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__item {
+      height: 355px;
+
+      &-wrapper {
+        padding: 20px;
+      }
+
+      &-image {
+        border-radius: 25px;
+      }
+    }
+
+    .navigation-buttons {
+      display: none;
+    }
+  }
+}
