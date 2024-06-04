@@ -35,7 +35,7 @@ include layout/utils
   .container
     .certificates__title Сертификаты
     .section-title-wrapper
-    .swiper.certificates_list
+    .swiper.certificates__list
       .swiper-wrapper
         each item in certificates
           .swiper-slide.certificates__item
@@ -44,6 +44,6 @@ include layout/utils
             .certificates__item-footer
               +anchor.certificates__item-button.btn-inline Смотреть оригинал
       .navigation-buttons
-        .arrow-btn.arrow-btn--prev
-        .arrow-btn.arrow-btn--next
+        +wrapBreak: button.arrow-btn.arrow-btn--prev
+        +wrapBreak: button.arrow-btn.arrow-btn--next
 
