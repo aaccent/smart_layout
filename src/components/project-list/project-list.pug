@@ -1,0 +1,138 @@
+include layout/utils
+
+-
+  var projects = [
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },{
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },{
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },{
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },{
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },{
+      image: require('assets/content/project1.jpg'),
+      title: 'DHL',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    },
+    {
+      image: require('assets/content/project2.jpg'),
+      title: 'Русагро',
+      description: 'Контроль местоположения, рейсов, стоянок, скоростных режимов'
+    }
+  ]
+
+
++section.project-list
+  .project-list__header
+    .project-list__filters
+      .project-list__filters-wrapper
+        button.project-list__filters-button._active все кейсы
+        button.project-list__filters-button проекты
+        button.project-list__filters-button объекты
+        button.project-list__filters-button услуги
+    .project-list__title найдено 0.2
+  .section-title-wrapper
+  .project-list__items
+    each item in projects
+      +anchor.project-list__item
+        +img(item.image).project-list__item-image
+        .project-list__item-wrapper
+          .project-list__item-info
+            .project-list__item-title=item.title
+            .project-list__item-description=item.description
+          .project-list__item-button.btn-inline Подробнее
+  button.btn.btn--blue.project-list__more-btn
+    span Показать еще
+
+
+
+
+
