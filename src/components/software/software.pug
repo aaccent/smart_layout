@@ -1,0 +1,51 @@
+include layout/utils
+
+-
+  var software = [
+    {
+      title: 'Wialon',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: ''
+    },
+    {
+      title: 'GeliosPro',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: '_turquoise'
+    },
+    {
+      title: 'Omnicomm',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: '_light-green'
+    },
+    {
+      title: 'Wialon',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: '_purple'
+    },
+    {
+      title: 'GeliosPro',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: '_yellow'
+    },
+    {
+      title: 'Omnicomm',
+      description: 'Самый популярный сервис в России, поддержка практически всех видов оборудования',
+      cornerClass: '_red'
+    },
+
+  ]
+
+.software
+  .container
+    h2.section-title ПРограмное обеспечение
+    .section-title-wrapper
+    .swiper
+      .swiper-wrapper.software__list
+        each item in software
+          div(class=item.cornerClass).swiper-slide.software__item
+            .software__item-title=item.title
+            .software__item-description=item.description
+            .software__item-footer
+              +anchor.software__item-button.btn-inline подробнее
+            .software__item-wrapper
+
