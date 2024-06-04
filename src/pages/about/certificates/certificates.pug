@@ -1,0 +1,49 @@
+include layout/utils
+
+-
+  var certificates = [
+    {
+      type: 'лицензия',
+      title: 'аттестованный партнер ГК СКАУТ в сфере навигации',
+    },
+    {
+      type: 'сертификат',
+      title: 'соответствие требованиям безопасности',
+    },
+    {
+      type: 'свидетельство',
+      title: 'свидетельство на оказание услуг',
+    },
+    {
+      type: 'лицензия',
+      title: 'аттестованный партнер ГК СКАУТ в сфере навигации',
+    },
+    {
+      type: 'сертификат',
+      title: 'соответствие требованиям безопасности',
+    },
+    {
+      type: 'свидетельство',
+      title: 'свидетельство на оказание услуг',
+    },
+
+  ]
+
+
+
+.certificates
+  .container
+    .certificates__title Сертификаты
+    .section-title-wrapper
+    .swiper.certificates__list
+      .swiper-wrapper
+        each item in certificates
+          .swiper-slide.certificates__item
+            .certificates__item-type=item.type
+            .certificates__item-title=item.title
+            .certificates__item-footer
+              +anchor.certificates__item-button.btn-inline Смотреть оригинал
+      .navigation-buttons
+        +wrapBreak: button.arrow-btn.arrow-btn--prev
+        +wrapBreak: button.arrow-btn.arrow-btn--next
+
