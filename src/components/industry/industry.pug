@@ -1,0 +1,39 @@
+include layout/utils
+-
+  var industryList = [
+    {
+      title: 'ГЛОНАСС на легковой транспорт',
+      description: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      image: require('assets/content/industry1.jpg?as=webp')
+    },
+    {
+      title: 'Грузоперевозки и контроль топлива',
+      description: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      image: require('assets/content/industry2.jpg?as=webp')
+    },
+    {
+      title: 'Контроль сельхозтехники',
+      description: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      image: require('assets/content/industry3.jpg?as=webp')
+    },
+    {
+      title: 'Спецтехника и подсчет моточасов',
+      description: 'Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы',
+      image: require('assets/content/industry4.jpg?as=webp')
+    },
+  ]
+
++section.industry
+  .section-title отрасли
+  .section-title-wrapper
+  .industry-list
+    each item in industryList
+      .industry-list__item
+        .industry-list__item-part
+          +img(item.image).industry-list__item-img
+          .industry-list__item-title=item.title
+        .industry-list__item-part
+          .industry-list__item-description=item.description
+          .industry-list__item-icon
+  +anchor.btn.btn--white
+    span Показать еще
