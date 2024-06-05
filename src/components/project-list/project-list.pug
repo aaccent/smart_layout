@@ -118,7 +118,11 @@ include layout/utils
         button.project-list__filters-button проекты
         button.project-list__filters-button объекты
         button.project-list__filters-button услуги
-    .project-list__title найдено 0.2
+    .project-list__title
+      | найдено
+      span.amount  22
+      //- окончание меняется в зависимости от числа через скрипты
+      span.suffix проектов
   .section-title-wrapper
   .project-list__items
     each item in projects
