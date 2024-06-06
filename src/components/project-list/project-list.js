@@ -1,5 +1,5 @@
 const pluralRule = new Intl.PluralRules('ru-RU')
-const suffixes = new Map([
+const projectSuffixes = new Map([
   [ 'few', 'проекта' ],
   [ 'many', 'проектов' ],
   [ 'one', 'проект' ],
@@ -8,7 +8,7 @@ const suffixes = new Map([
 
 function format(n) {
   const rule = pluralRule.select(n)
-  return suffixes.get(rule)
+  return projectSuffixes.get(rule)
 }
 
 void function () {
