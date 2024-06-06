@@ -8,7 +8,7 @@ html {
 
 .section-wrapper {
   position: relative;
-  margin: -34px 0;
+  margin: -50px 0 -34px;
   width: 100%;
   border-radius: 32px;
 
@@ -22,6 +22,12 @@ html {
     margin-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+
+    &:has( .seo) {
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      margin-bottom: -34px;
+    }
   }
 
   &--white {
@@ -37,6 +43,10 @@ html {
     color: var(--base100);
   }
 
+  //&:has(> .reviews) {
+  //  //margin: -50px;
+  //}
+
   .section-wrapper + .section-wrapper {
     margin-top: 0;
   }
@@ -45,6 +55,7 @@ html {
 @media only screen and (max-width: utils.$tablet1000) {
   .section-wrapper {
     margin: -25px 0;
+    border-radius: 20px;
 
     &--white {
       padding: 25px 0;
