@@ -3,8 +3,8 @@ include layout/utils
 .about-company
   .about-company__image: picture
     source(srcset=require('assets/content/mobile-about-bg.jpg?as=webp') media='(max-width:1000px)')
-    source(src=require('assets/content/about-bg.jpg'))
-    +img(require('assets/content/about-bg.jpg'))
+    source(src=require('assets/content/about-bg.jpg?as=webp'))
+    +img(require('assets/content/about-bg.jpg?as=webp'))
   .container
     .about-company__header
       .section-title О компании
