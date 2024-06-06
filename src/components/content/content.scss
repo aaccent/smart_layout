@@ -2,7 +2,6 @@
 
 .content {
   @include utils.text-base-300-lg-100;
-  padding-top: 80px;
   color: var(--base300);
 
   .section-title {

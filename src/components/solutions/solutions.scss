@@ -3,6 +3,7 @@
 .solutions {
   --margin: 56px;
   position: relative;
+  padding-top: 150px;
 
   &__header {
     display: flex;
@@ -19,7 +20,7 @@
 
   &__button {
     position: absolute;
-    top: 0;
+    top: 150px;
     right: 80px;
     border-color: hsla(0, 0%, 18%, .2)
   }
@@ -100,6 +101,7 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .solutions {
+    padding-top: 70px;
 
     .container {
       position: relative;
@@ -143,6 +145,7 @@
       position: relative;
       margin-top: 25px;
       right: 0;
+      top: 0;
     }
 
     .navigation-buttons {
