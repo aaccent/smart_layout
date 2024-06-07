@@ -14,8 +14,12 @@ import 'components/our-clients/our-clients.js'
 import 'components/projects/projects.js'
 import 'components/about-company/about-company.js'
 import 'components/software/software.js'
-import 'pages/contacts/components/contacts-map.js'
+import 'components/project-list/project-list.js'
+import 'components/equipment/equipment.js'
+import 'components/articles/articles.js'
+import 'components/other-sales/other-sales.js'
 
 import 'pages/about/certificates/certificates.js'
+import 'pages/contacts/components/contacts-map.js'
 
 import 'features/fancybox'

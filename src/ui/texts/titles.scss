@@ -3,4 +3,8 @@
 .section-title {
   max-width: 700px;
   @include utils.text-header-200;
+
+  span {
+    opacity: .4;
+  }
 }
