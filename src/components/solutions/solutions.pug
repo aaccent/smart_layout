@@ -37,7 +37,9 @@ include layout/utils
 .solutions
   .container
     .solutions__header
-      .section-title мы предлагаем готовые решения для бизнеса
+      h2.section-title мы предлагаем готовые решения
+        +wrapBreak
+        span для бизнеса
       .solutions__text Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы
     .solutions__content
       .section-title-wrapper
@@ -47,7 +49,7 @@ include layout/utils
             +anchor().swiper-slide.solutions__item
               +img(item.image)
               .solutions__item-title=item.title
-              button.solutions__item-button.btn-inline Подробнее
+              .solutions__item-button.btn-inline Подробнее
         .navigation-buttons
           .arrow-btn.arrow-btn--prev
           .arrow-btn.arrow-btn--next
