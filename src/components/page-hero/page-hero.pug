@@ -19,15 +19,12 @@ mixin page-hero(props)
         +img(props.picture).page-hero__image
     if props.mode
       .page-hero__content.mode-content
-        .page-hero__title
-          h1=props.title
-        .page-hero__text
-          p #{props.text}
+        .page-hero__title: h1=props.title
+        .page-hero__text: p #{props.text}
     else if props.isAboutPage
       .page-hero__content._about
-        .page-hero__title=props.title
-        .page-hero__text
-          p #{props.text}
+        .page-hero__title: h1=props.title
+        .page-hero__text: p #{props.text}
         .page-hero__company смарт
     else
       .page-hero__content
