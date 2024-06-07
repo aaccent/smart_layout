@@ -1,0 +1,12 @@
+extends layout/page
+
+append main
+  include components/page-hero/page-hero
+  +page-hero({
+    title: 'Контакты',
+    picture: require('assets/content/contacts-hero.jpg?as=webp'),
+    mobPicture: require('assets/content/contacts-hero-mobile.jpg?as=webp'),
+    mode: true
+  })
+  .section-wrapper.section-wrapper--white
+    include ./components/contacts-section/contacts-section

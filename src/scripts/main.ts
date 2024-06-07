@@ -20,5 +20,6 @@ import 'components/articles/articles.js'
 import 'components/other-sales/other-sales.js'
 
 import 'pages/about/certificates/certificates.js'
+import 'pages/contacts/components/contacts-map.js'
 
 import 'features/fancybox'
