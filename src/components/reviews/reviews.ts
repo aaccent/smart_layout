@@ -7,7 +7,6 @@ new Swiper('.reviews .swiper', {
       nextEl: '.arrow-btn--next',
       prevEl: '.arrow-btn--prev',
     },
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 10,
 

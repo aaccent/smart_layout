@@ -1,4 +1,6 @@
 @use 'styles/utils';
+@use "node_modules/swiper/swiper";
+@use "node_modules/swiper/modules/navigation";
 
 .gallery {
   .section-title {
@@ -48,6 +50,10 @@
         max-width: 310px;
         border-radius: 20px;
       }
+    }
+
+    .navigation-buttons {
+      display: none;
     }
   }
 }

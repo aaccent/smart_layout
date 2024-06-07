@@ -27,6 +27,7 @@
 @use 'layout/header/header';
 @use 'layout/footer/footer';
 @use 'pages/about/about';
+@use "pages/contacts/contacts";
 
 //Components
 @use 'components/page-hero/page-hero';
@@ -47,3 +48,6 @@
 @use 'components/project-list/project-list';
 @use 'components/equipment/equipment';
 @use 'components/industry/industry';
+@use 'components/sales/sales';
+@use 'components/other-sales/other-sales';
+@use 'components/articles/articles';

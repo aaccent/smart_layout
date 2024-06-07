@@ -8,5 +8,9 @@
   .arrow-btn {
     background-color: var(--base100);
     border: 1px solid hsla(0, 0%, 18%, .2);
+
+    &.swiper-button-disabled::after {
+      opacity: 0.2;
+    }
   }
 }

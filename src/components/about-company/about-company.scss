@@ -1,11 +1,16 @@
 @use 'styles/utils';
 
 .about-company {
+  position: relative;
+  margin-top: -50px;
   height: 842px;
   color: var(--base100);
+  z-index: 1;
 
   &__image {
     position: relative;
+    border-radius: 32px;
+    overflow: hidden;
 
     &::after {
       content: '';
@@ -26,7 +31,7 @@
     position: absolute;
     inset: 0;
     padding-top: 80px;
-    padding-bottom: 64px;
+    padding-bottom: 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -42,6 +47,7 @@
     @include utils.text-base-200-lg-100;
     max-width: 398px;
     width: 100%;
+    opacity: .7;
   }
 
   &__footer {
@@ -96,6 +102,10 @@
   .about-company {
     height: 700px;
 
+    &__description {
+      line-height: 20px;
+    }
+
     .container {
       padding-top: 23px;
       padding-bottom: 45px;
@@ -103,6 +113,7 @@
 
     &__image {
       height: 100%;
+      border-radius: 20px;
     }
 
     &__header {

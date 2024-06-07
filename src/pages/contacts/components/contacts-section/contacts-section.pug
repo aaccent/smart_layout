@@ -1,0 +1,37 @@
+include layout/utils
+
+-
+    var list = [
+        'Отдел продаж, консультации, техподдержка, бухгалтерия',
+        'Консультирование клиентов, возможности системы, техническая информация',
+        'Техническая поддержка клиентов',
+        'Предложения, сотрудничество, жалобы, контроль качества сервиса',
+        'Консультирование клиентов, возможности системы, техническая информация',
+    ]
+
++section.contacts
+    .contacts__top
+        .contacts__top-tel-wrapper
+            +anchor('tel:8 (976) 543-21-00').contacts__top-tel 8 (976) 543-21-00
+            .contacts__top-schedule Пн-Пт: с 9:00 до 19:00
+        .contacts__top-address Республика Татарстан, г. Казань, ул. Баумана, 1
+        .contacts__top-email mail@smart.ru
+        .socials
+            +anchor('#').socials__img
+                +img(require('assets/icons/TG.svg'))
+            +anchor('#').socials__img
+                +img(require('assets/icons/VK.svg'))
+            +anchor('#').socials__img
+                +img(require('assets/icons/ok.svg'))
+            +anchor('#').socials__img
+                +img(require('assets/icons/youtube.svg'))
+    ul.contacts__list
+        each item in list
+            li.contacts__list-item
+                .contacts__list-item-text= item
+                .contacts__list-item-wrapper
+                    .contacts__list-item-wrapper-block
+                        .contacts__list-item__schedule Пн-Пт, 08:00 - 18:00
+                        +anchor('mailto:smartsale@gmail.com').contacts__list-item__email smartsale@gmail.com
+                    +anchor('tel:8 (976) 543-21-00').contacts__list-item__tel 8 (976) 543-21-00
+    .contacts__map(data-coords="49.06281437490501, 55.84745931863819")

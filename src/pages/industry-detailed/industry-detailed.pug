@@ -1,0 +1,20 @@
+extends layout/page
+
+append main
+  include components/page-hero/page-hero
+  +page-hero({
+    title: 'ГЛОНАСС на легковой транспорт',
+    text: 'Целевая аудитория, следовательно, раскручивает пак-шот. Экономия времени и ресурсов, качественный результат, быстрое внедрение и повышение.',
+    picture: require('assets/content/page-hero-image.png?as=webp'),
+    mobPicture: require('assets/content/mob-page-hero-img.jpg?as=webp'),
+  })
+
+  .section-wrapper.section-wrapper--white
+    include components/content/content
+    include components/solutions/solutions
+    include components/specialists/specialists
+  .section-wrapper.section-wrapper--gradient
+    include components/benefits/benefits
+  .section-wrapper.section-wrapper--white
+    include components/gallery/gallery
+    include components/seo/seo

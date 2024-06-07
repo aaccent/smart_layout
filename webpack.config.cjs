@@ -8,12 +8,16 @@ const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
 
 const sourcePath = path.join(__dirname, 'src')
 
-const keepPugFolderStructure = (pathData) => {
+const keepPugFolderStructure = (pathData, replacer = '') => {
   const sourceFile = pathData.filename
   const relativeFile = path.relative(sourcePath, sourceFile)
   const { dir, name } = path.parse(relativeFile)
-  return `${dir.replace('assets\\', '')}/${name}[ext]`
+
+  return `${dir.replace('assets', replacer)}/${name}[ext]`
 }
+
+const keepPugFolderStructureForMedia = (pathData) => keepPugFolderStructure(pathData, 'media')
+const keepPugFolderStructureForFonts = (pathData) => keepPugFolderStructure(pathData, '')
 
 const pagesRegex = /[\\/]pages[\\/]([\w_-]+)[\\/]/
 
@@ -72,17 +76,17 @@ module.exports = async () => {
         {
           test: /\.(png|jpg|jpeg|ico|svg|webp)/,
           type: 'asset/resource',
-          generator: { filename: keepPugFolderStructure },
+          generator: { filename: keepPugFolderStructureForMedia },
         },
         {
           test: /\.(woff|woff2)$/i,
           type: 'asset/resource',
-          generator: { filename: keepPugFolderStructure },
+          generator: { filename: keepPugFolderStructureForFonts },
         },
         {
           test: /\.(webm|mp4)$/i,
           type: 'asset/resource',
-          generator: { filename: keepPugFolderStructure },
+          generator: { filename: keepPugFolderStructureForMedia },
         },
       ],
     },

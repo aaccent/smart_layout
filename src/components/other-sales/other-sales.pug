@@ -1,0 +1,19 @@
+include layout/utils
+
++section.other-sales
+  h2.section-title другие акции
+  .section-title-wrapper
+  .swiper.other-sales-list
+    .swiper-wrapper
+      each _ in Array(7)
+        .swiper-slide.other-sales__item
+          +img(require('assets/content/gallery-item1.jpg?as=webp')).other-sales__item-image
+          .other-sales__item-content
+            .other-sales__item-text
+              .other-sales__item-title гарантия лучшей цены
+              .other-sales__item-description Нашли дешевле? Снизим стоимость! Гарантируем лучшую стоимость на рынке
+            .other-sales__item-footer
+              +anchor.other-sales__item-button.btn-inline Подробнее
+    .navigation-buttons.other-sales-buttons
+      .arrow-btn.arrow-btn--prev
+      .arrow-btn.arrow-btn--next

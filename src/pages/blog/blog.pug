@@ -1,0 +1,13 @@
+extends layout/page
+
+append main
+  include components/page-hero/page-hero
+  +page-hero({
+    title: 'Блог',
+    text: 'Целевая аудитория, следовательно, раскручивает пак-шот. Экономия времени и ресурсов, качественный результат, быстрое внедрение и повышение.',
+    picture: require('assets/content/page-hero-image.png?as=webp'),
+    mobPicture: require('assets/content/mob-page-hero-img.jpg?as=webp'),
+    mode: true
+  })
+  .section-wrapper.section-wrapper--white
+    include components/articles/articles

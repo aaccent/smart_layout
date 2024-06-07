@@ -1,0 +1,31 @@
+include layout/utils
+
+
++section.articles
+  .articles__header
+    .articles__select
+      input(type='hidden' value='new')
+      +wrapBreak: button.articles__select-button сначала
+        span  новые
+      ul.articles__select-list
+        li(data-value='new').articles__select-item._selected новые
+        li(data-value='popular').articles__select-item популярные
+    .articles__title
+      +wrapBreak: | найдено
+      |
+      +wrapBreak: span.amount 31
+      |
+      // окончание меняется в зависимости от числа через скрипты
+      +wrapBreak: span.suffix статьи
+  .section-title-wrapper
+  .articles-list
+    each _ in Array(12)
+      +anchor.articles__item
+        +img(require('assets/content/gallery-item2.jpg')).articles__item-image
+        .articles__item-title открытие нового направления навигации
+        .articles__item-description Самый популярный сервис в России, поддержка практически всех видов оборудования
+  +wrapBreak: button.btn.btn--blue.articles-button
+    span Показать еще
+
+
+

@@ -3,6 +3,10 @@
 @use "node_modules/swiper/modules/navigation";
 @use "styles/utils";
 
+.section-wrapper--white .specialists {
+  margin-top: 150px;
+}
+
 .specialists {
   .section-title-wrapper {
     border-bottom-color: hsla(0, 0%, 18%, 0.15);
@@ -40,16 +44,20 @@
   .navigation-buttons {
     margin-top: 48px;
   }
+}
 
-  @media only screen and (max-width: utils.$tablet1000) {
-    .swiper {
-      overflow: visible;
-    }
+@media only screen and (max-width: utils.$tablet1000) {
+  .section-wrapper--white .specialists {
+    margin-top: 70px;
+  }
 
-    &__item {
-      &-image {
-        height: 355px;
-      }
+  .swiper {
+    overflow: visible;
+  }
+
+  .specialists__item {
+    &-image {
+      height: 355px;
     }
   }
 }
