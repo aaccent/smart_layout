@@ -39,7 +39,7 @@ include layout/utils
             +img(item.photo).specialists__item-image
             .specialists__item-name #{item.name}
             .specialists__item-position #{item.position}
-            .specialists__item-tel #{item.tel}
+            +anchor(`tel:${item.tel}`).specialists__item-tel #{item.tel}
       .navigation-buttons
         .arrow-btn.arrow-btn--prev
         .arrow-btn.arrow-btn--next
