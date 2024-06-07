@@ -1,8 +1,6 @@
 @use 'styles/utils';
 
 .industry {
-  padding-bottom: 150px;
-
   .section-title-wrapper {
     margin-bottom: 73px;
   }
@@ -76,8 +74,6 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .industry {
-    padding-bottom: 70px;
-
     .section-title-wrapper {
       margin-bottom: 20px;
     }

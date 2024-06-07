@@ -24,16 +24,16 @@ include layout/utils
   ]
 
 +section.industry
-  .section-title отрасли
+  h2.section-title отрасли
   .section-title-wrapper
   .industry-list
     each item in industryList
-      .industry-list__item
+      +anchor.industry-list__item
         .industry-list__item-part
           +img(item.image).industry-list__item-img
           .industry-list__item-title=item.title
         .industry-list__item-part
           .industry-list__item-description=item.description
           .industry-list__item-icon
-  +anchor.btn.btn--white
+  button.btn.btn--white
     span Показать еще
