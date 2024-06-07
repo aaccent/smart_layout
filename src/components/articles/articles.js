@@ -1,4 +1,5 @@
-const pluralRule = new Intl.PluralRules('ru-RU')
+import {suffixObserver} from "features/suffixObserver";
+
 const articlesSuffixes = new Map([
   [ 'few', 'статьи' ],
   [ 'many', 'статей' ],
@@ -6,30 +7,8 @@ const articlesSuffixes = new Map([
   [ 'other', 'статьи' ],
 ])
 
-function format(n) {
-  const rule = pluralRule.select(n)
-  return articlesSuffixes.get(rule)
-}
-
-void function () {
-  const amount = document.querySelector('.articles .amount')
-  const suffix = document.querySelector('.articles .suffix')
-  const title = document.querySelector('.articles__title')
-
-  if (!title) return
-
-  const articlesAmountNumber = Number(amount.textContent)
-
-  suffix.textContent = ` ${format(articlesAmountNumber)}`
-
-  let observer = new MutationObserver(() => {
-    const currentAmount = Number(document.querySelector('.project-list .amount').textContent)
-    suffix.textContent = format(currentAmount)
-  })
-
-  observer.observe(title, { childList: true, subtree: true })
-}()
-
+const title = document.querySelector('.articles__title')
+suffixObserver(title, articlesSuffixes)
 
 void function () {
   const selectButton = document.querySelector('.articles__select-button')
