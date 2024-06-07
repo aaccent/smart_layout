@@ -1,5 +1,6 @@
 @use "node_modules/swiper/swiper";
 @use 'node_modules/swiper/modules/autoplay';
+@use "node_modules/swiper/modules/navigation";
 @use "styles/utils";
 
 .our-clients {
@@ -17,6 +18,10 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 80px;
+
+    span {
+      opacity: .5;
+    }
   }
 
   &__item {
@@ -39,6 +44,9 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .our-clients {
+    margin-top:70px;
+    padding-bottom: 20px;
+
     &__title {
       font-size: 3.4rem;
       margin-bottom: 35px;

@@ -25,7 +25,8 @@
   }
 
   &__image {
-    width: 50%;
+    max-width: 752px;
+    width: 100%;
     object-fit: cover;
     object-position: center;
     border-radius: 48px;
@@ -44,6 +45,7 @@
     padding-top: 24px;
     margin-bottom: 24px;
     position: relative;
+    display: block;
 
     &-title {
       @include utils.text-header-400;
@@ -86,7 +88,7 @@
     }
 
     &__image {
-      width: 100%;
+      min-width: 330px;
       height: 230px;
       border-radius: 25px;
     }

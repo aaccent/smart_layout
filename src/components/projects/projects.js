@@ -8,7 +8,6 @@ new Swiper('.projects .swiper', {
       prevEl: '.arrow-btn--prev',
     },
 
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 10,
 

@@ -3,7 +3,7 @@
 .question-form {
   @include utils.bg-defaults(cover);
   background-image: url("assets/static/form-bg.jpg?as=webp");
-  padding-top: 148px;
+  padding-top: 100px;
   position: relative;
 
   &::after {

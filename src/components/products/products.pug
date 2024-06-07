@@ -8,19 +8,22 @@ include layout/utils
       .products__info
         .products__subtitle Наша компания предоставляет доступ к большинству видов ПО на рынке мониторинга
         .products__list
-          .products__item
+          +anchor.products__item
             .products__item-title Wialon
             .products__item-description Самый популярный сервис в России, поддержка практически всех видов оборудования
             .products__item-icon
-          .products__item
+          +anchor.products__item
             .products__item-title GeliosPro
             .products__item-description Отличное ПО для небольших автопарков, лучшее соотношение цены и качества. Зарегистрирован в реестре отечетсвенного ПО.
             .products__item-icon
-          .products__item
+          +anchor.products__item
             .products__item-title Omnicomm
             .products__item-description Давно зарекомендовавшее себя ПО, гибкий функционал, высокая стабильность и идеальное приложение для руководителей
             .products__item-icon
         +anchor.products__button.btn.btn--white
           span Смотреть все
-      +img(require('assets/content/products-img.jpg?as=webp')).products__image
+      picture
+        source(srcset=require('assets/content/products-img1.png?as=webp') media='(max-width:1000px)')
+        source(srcset=require('assets/content/products-img1.png?as=webp'))
+        +img(require('assets/content/products-img.jpg?as=webp')).products__image
 

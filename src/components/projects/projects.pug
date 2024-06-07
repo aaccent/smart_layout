@@ -28,7 +28,7 @@ include layout/utils
 .projects
   .container
     .projects__header
-      .section-title реализованные проекты
+      h2.section-title реализованные проекты
       .projects__text Экономия времени и ресурсов,  качественный результат, быстрое внедрение и повышение эффективности работы
     .projects__content
       .section-title-wrapper
@@ -43,8 +43,8 @@ include layout/utils
                   .projects__item-description=item.description
                 .projects__item-button.btn-inline Подробнее
     .navigation-buttons
-      .arrow-btn.arrow-btn--prev
-      .arrow-btn.arrow-btn--next
-  button.projects__button.btn.btn--blue
+      +wrapBreak: button.arrow-btn.arrow-btn--prev
+      +wrapBreak: button.arrow-btn.arrow-btn--next
+  +anchor.projects__button.btn.btn--blue
     span Смотреть все
 

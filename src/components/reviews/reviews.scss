@@ -5,6 +5,7 @@
 @use "styles/utils";
 
 .reviews {
+  margin-top: -70px;
 
   &__list {
     position: relative;
@@ -82,6 +83,7 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .reviews {
+    padding-top: 23px;
 
     &__list {
       border-radius: 0;
