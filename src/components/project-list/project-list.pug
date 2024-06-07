@@ -114,15 +114,17 @@ include layout/utils
   .project-list__header
     .project-list__filters
       .project-list__filters-wrapper
-        button.project-list__filters-button._active все кейсы
-        button.project-list__filters-button проекты
-        button.project-list__filters-button объекты
-        button.project-list__filters-button услуги
+        +wrapBreak: button.project-list__filters-button._active все кейсы
+        +wrapBreak: button.project-list__filters-button проекты
+        +wrapBreak: button.project-list__filters-button объекты
+        +wrapBreak: button.project-list__filters-button услуги
     .project-list__title
-      | найдено
-      span.amount  22
-      //- окончание меняется в зависимости от числа через скрипты
-      span.suffix проектов
+      +wrapBreak: | найдено
+      |
+      +wrapBreak: span.amount 22
+      |
+      // окончание меняется в зависимости от числа через скрипты
+      +wrapBreak: span.suffix проектов
   .section-title-wrapper
   .project-list__items
     each item in projects

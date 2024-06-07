@@ -16,6 +16,7 @@ import 'components/about-company/about-company.js'
 import 'components/software/software.js'
 import 'components/project-list/project-list.js'
 import 'components/equipment/equipment.js'
+import 'components/articles/articles.js'
 import 'components/other-sales/other-sales.js'
 
 import 'pages/about/certificates/certificates.js'
