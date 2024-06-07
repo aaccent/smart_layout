@@ -25,8 +25,7 @@ include layout/utils
     {
       type: 'свидетельство',
       title: 'свидетельство на оказание услуг',
-    },
-
+    }
   ]
 
 
@@ -37,12 +36,13 @@ include layout/utils
     .section-title-wrapper
     .swiper.certificates__list
       .swiper-wrapper
+        - var img = require('assets/content/sertificate.png')
         each item in certificates
-          .swiper-slide.certificates__item
+          +wrapBreak: a(href=img data-fancybox='certificates').swiper-slide.certificates__item
             .certificates__item-type=item.type
             .certificates__item-title=item.title
             .certificates__item-footer
-              +anchor.certificates__item-button.btn-inline Смотреть оригинал
+              .certificates__item-button.btn-inline Смотреть оригинал
       .navigation-buttons
         +wrapBreak: button.arrow-btn.arrow-btn--prev
         +wrapBreak: button.arrow-btn.arrow-btn--next

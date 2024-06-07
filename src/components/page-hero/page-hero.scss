@@ -4,6 +4,16 @@
   position: relative;
   height: 840px;
 
+  &__company {
+    font: 400 37.1rem var(--bowler);
+    color: var(--base100);
+    opacity: .25;
+    position: absolute;
+    bottom: -150px;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
   &:has(.mode-content) {
     height: 435px;
   }
@@ -39,6 +49,11 @@
     flex-direction: column;
     justify-content: space-between;
     color: var(--base100);
+
+    &._about {
+      flex-direction: row;
+      align-items: flex-start;
+    }
 
     &.mode-content {
       flex-direction: row;
@@ -90,6 +105,11 @@
     height: 100svh;
     max-height: 591px;
 
+    &__company {
+      font-size: 8rem;
+      bottom: -13px;
+    }
+
     &:has(.mode-content) {
       height: 337px;
     }
@@ -100,6 +120,14 @@
 
       &.mode-content {
         flex-direction: column;
+      }
+
+      &._about {
+        flex-direction: column;
+
+        .page-hero__text {
+          padding-bottom: 50px;
+        }
       }
     }
 
