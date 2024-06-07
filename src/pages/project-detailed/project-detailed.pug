@@ -1,0 +1,18 @@
+extends layout/page
+
+append main
+  include components/page-hero/page-hero
+  +page-hero({
+    title: 'Русагро',
+    text: 'Целевая аудитория, следовательно, раскручивает пак-шот. Экономия времени и ресурсов, качественный результат, быстрое внедрение и повышение.',
+    picture: require('assets/content/project-detailed.png?as=webp'),
+    mobPicture: require('assets/content/project-detailed.png?as=webp'),
+  })
+
+  .section-wrapper.section-wrapper--white
+    include components/content/content
+  .section-wrapper.section-wrapper--gradient
+    include components/benefits/benefits
+  .section-wrapper.section-wrapper--white
+    include components/gallery/gallery
+    include components/seo/seo
