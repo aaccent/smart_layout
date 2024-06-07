@@ -8,12 +8,9 @@ new Swiper('.solutions .swiper', {
       prevEl: '.arrow-btn--prev',
     },
 
-    loop: true,
     slidesPerView: 1.1,
     spaceBetween: 10,
-    fadeEffect: {
-      crossFade: true,
-    },
+
     breakpoints: {
       1000: {
         slidesPerView: 4,

@@ -8,7 +8,6 @@ new Swiper('.our-clients .swiper', {
       prevEl: '.arrow-btn--prev',
     },
 
-    loop: true,
     autoplay: {
       delay: 0,
     },

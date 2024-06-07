@@ -1,7 +1,6 @@
 import Swiper from 'swiper'
 
 new Swiper('.software .swiper', {
-    loop: true,
     slidesPerView: 'auto',
     spaceBetween: 10,
 
