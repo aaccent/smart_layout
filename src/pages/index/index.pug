@@ -1,5 +1,8 @@
 extends layout/page
 
+prepend head
+    - title = 'Главная'
+
 append main
     include components/main-hero/main-hero
     .section-wrapper.section-wrapper--white

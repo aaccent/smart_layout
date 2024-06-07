@@ -1,5 +1,8 @@
 extends layout/page
 
+prepend head
+  - title = 'Список отраслей'
+
 append main
   include components/page-hero/page-hero
   +page-hero({
