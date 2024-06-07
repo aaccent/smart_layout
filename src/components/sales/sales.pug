@@ -4,38 +4,15 @@ include layout/utils
   h2.section-title Акции
   .section-title-wrapper
   .sales-list
-    .sales-list__item
-      +img(require('assets/content/sales.jpg')).sales-list__item-image
-      .sales-list__item-content
-        .sales-list__item-text
-          .sales-list__item-title гарантия лучшей цены
-          .sales-list__item-description Нашли дешевле? Снизим стоимость! Гарантируем лучшую стоимость на рынке
-        .sales-list__item-footer
-          +anchor.btn-inline.sales-list__item-button Подробнее
-    .sales-list__item
-      +img(require('assets/content/sales2.jpg')).sales-list__item-image
-      .sales-list__item-content
-        .sales-list__item-text
-          .sales-list__item-title скидка 10%
-          .sales-list__item-description Получите скидку 10% на любой продукт при оформление заказа через сайт
-        .sales-list__item-footer
-          +anchor.btn-inline.sales-list__item-button Подробнее
-    .sales-list__item
-      +img(require('assets/content/sales.jpg')).sales-list__item-image
-      .sales-list__item-content
-        .sales-list__item-text
-          .sales-list__item-title гарантия лучшей цены
-          .sales-list__item-description Нашли дешевле? Снизим стоимость! Гарантируем лучшую стоимость на рынке
-        .sales-list__item-footer
-          +anchor.btn-inline.sales-list__item-button Подробнее
-    .sales-list__item
-      +img(require('assets/content/sales2.jpg')).sales-list__item-image
-      .sales-list__item-content
-        .sales-list__item-text
-          .sales-list__item-title скидка 10%
-          .sales-list__item-description Получите скидку 10% на любой продукт при оформление заказа через сайт
-        .sales-list__item-footer
-          +anchor.btn-inline.sales-list__item-button Подробнее
+    each _ in Array(4)
+      +anchor.sales-list__item
+        +img(require('assets/content/sales.jpg')).sales-list__item-image
+        .sales-list__item-content
+          .sales-list__item-text
+            .sales-list__item-title гарантия лучшей цены
+            .sales-list__item-description Нашли дешевле? Снизим стоимость! Гарантируем лучшую стоимость на рынке
+          .sales-list__item-footer
+            .btn-inline.sales-list__item-button Подробнее
   button.btn.btn--white.sales-button
     span Показать все
 

@@ -1,8 +1,6 @@
 @use 'styles/utils';
 
 .sales {
-  padding-bottom: 150px;
-
   &-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -62,7 +60,6 @@
           height: 24px;
           border: 1px solid var(--base100);
           border-radius: 8px;
-
         }
       }
     }
@@ -74,8 +71,6 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .sales {
-    padding-bottom: 25px;
-
     &-list {
       grid-template-columns: 1fr;
 
