@@ -1,0 +1,20 @@
+extends layout/page
+
+
+append main
+  include components/page-hero/page-hero
+  +page-hero({
+    title: 'GeliosPro',
+    text: 'Целевая аудитория, следовательно, раскручивает пак-шот. Экономия времени и ресурсов, качественный результат, быстрое внедрение и повышение.',
+    picture: require('assets/content/product-detailed.jpg?as=webp'),
+    mobPicture: require('assets/content/product-detailed.jpg?as=webp'),
+  })
+  .section-wrapper.section-wrapper--white
+    include components/content/content
+    include components/specialists/specialists
+  .section-wrapper.section-wrapper--gradient
+    include components/benefits/benefits
+  .section-wrapper.section-wrapper--white
+    include components/gallery/gallery
+    include components/seo/seo
+

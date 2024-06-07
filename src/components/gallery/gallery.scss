@@ -3,6 +3,8 @@
 @use "node_modules/swiper/modules/navigation";
 
 .gallery {
+  margin-bottom: 80px;
+
   .section-title {
     @include utils.text-header-100;
     max-width: 100%;
@@ -37,6 +39,8 @@
   }
 
   @media only screen and (max-width: utils.$tablet1000) {
+    margin-bottom: 40px;
+
     .section-title {
       text-align: left;
     }
