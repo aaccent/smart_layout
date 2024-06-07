@@ -1,0 +1,68 @@
+@use "node_modules/swiper/swiper";
+@use 'styles/utils';
+
+.equipment {
+  padding-top: 150px;
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    &__item {
+      padding: 45px 32px 30px;
+      display: flex;
+      flex-direction: column;
+      background-color: hsla(0, 0%, 100%, 0.1);
+      border-radius: 32px;
+      position: relative;
+
+      &-icon {
+        @include utils.bg-defaults(auto);
+        background-image: url("assets/icons/arrow.svg");
+        filter: var(--filter-white);
+        width: 24px;
+        height: 24px;
+        border-radius: 8px;
+        border: 1px solid var(--base100);
+        opacity: .5;
+        align-self: end;
+        position: absolute;
+        right: 32px;
+        top: 32px;
+      }
+
+      &-image {
+        max-width: 210px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        align-self: center;
+        margin-bottom: 24px;
+      }
+
+      &-title {
+        @include utils.text-header-400;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .equipment {
+
+    &-list {
+      display: flex;
+
+      &__item {
+        width: 310px;
+        border-radius: 15px;
+
+        &-image {
+          width: 170px;
+        }
+      }
+    }
+  }
+}
