@@ -25,8 +25,7 @@ include layout/utils
     {
       type: 'свидетельство',
       title: 'свидетельство на оказание услуг',
-    },
-
+    }
   ]
 
 
@@ -39,7 +38,7 @@ include layout/utils
       .swiper-wrapper
         - var img = require('assets/content/sertificate.png')
         each item in certificates
-          a(href=img)(data-fancybox='certificates').swiper-slide.certificates__item
+          +wrapBreak: a(href=img data-fancybox='certificates').swiper-slide.certificates__item
             .certificates__item-type=item.type
             .certificates__item-title=item.title
             .certificates__item-footer
