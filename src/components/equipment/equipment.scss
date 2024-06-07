@@ -2,7 +2,7 @@
 @use 'styles/utils';
 
 .equipment {
-  padding-top: 150px;
+  padding-bottom: 150px;
 
   &-list {
     display: grid;
@@ -51,6 +51,8 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .equipment {
+
+    padding-bottom: 70px;
 
     &-list {
       display: flex;

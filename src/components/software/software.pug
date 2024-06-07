@@ -42,10 +42,10 @@ include layout/utils
     .swiper
       .swiper-wrapper.software__list
         each item in software
-          div(class=item.cornerClass).swiper-slide.software__item
+          +anchor(class=item.cornerClass).swiper-slide.software__item
             .software__item-title=item.title
             .software__item-description=item.description
             .software__item-footer
-              +anchor.software__item-button.btn-inline подробнее
+              .software__item-button.btn-inline подробнее
             .software__item-wrapper
 
