@@ -5,16 +5,18 @@ include layout/utils
   .articles__header
     .articles__select
       input(type='hidden' value='new')
-      button.articles__select-button сначала
+      +wrapBreak: button.articles__select-button сначала
         span  новые
       ul.articles__select-list
         li(data-value='new').articles__select-item._selected новые
         li(data-value='popular').articles__select-item популярные
     .articles__title
-      | найдено
-      span.amount  31
-      //- окончание меняется в зависимости от числа через скрипты
-      span.suffix статьи
+      +wrapBreak: | найдено
+      |
+      +wrapBreak: span.amount 31
+      |
+      // окончание меняется в зависимости от числа через скрипты
+      +wrapBreak: span.suffix статьи
   .section-title-wrapper
   .articles-list
     each _ in Array(12)
