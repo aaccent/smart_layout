@@ -1,34 +1,12 @@
+include layout/utils
+
 +section.equipment
-  .section-title оборудование
+  h2.section-title оборудование
   .section-title-wrapper
   .swiper
     .swiper-wrapper.equipment-list
-      .swiper-slide.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-      .swiper-slide.swiper.equipment-list__item
-        .equipment-list__item-icon
-        +img(require('assets/content/equipment.png')).equipment-list__item-image
-        .equipment-list__item-title навигационный датчик приема
-
+      each _ in Array(7)
+        +anchor.swiper-slide.equipment-list__item
+          .equipment-list__item-icon
+          +img(require('assets/content/equipment.png')).equipment-list__item-image
+          .equipment-list__item-title навигационный датчик приема
