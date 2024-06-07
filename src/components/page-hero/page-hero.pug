@@ -18,15 +18,17 @@ mixin page-hero(props)
         +img(props.picture).page-hero__image
     if props.mode
       .page-hero__content.mode-content
-        .page-hero__title=props.title
+        .page-hero__title
+          h1=props.title
         .page-hero__text
           p #{props.text}
     else
       .page-hero__content
-        .page-hero__title=props.title
+        .page-hero__title
+          h1=props.title
           if props.count
-            span.count <br>/#{props.count}
+            span.count /#{props.count}
         .page-hero__text
           p #{props.text}
-          .arrow
+          button.arrow
             +img(require('assets/icons/arrow.svg'))

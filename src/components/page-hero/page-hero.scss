@@ -49,10 +49,11 @@
     }
   }
 
-  &__title {
+  &__title h1 {
     @include utils.text-header-100;
 
-    span {
+    & ~ span {
+      @include utils.text-header-100;
       opacity: .5;
     }
   }
