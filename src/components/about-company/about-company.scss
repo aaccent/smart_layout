@@ -47,6 +47,7 @@
     @include utils.text-base-200-lg-100;
     max-width: 398px;
     width: 100%;
+    opacity: .7;
   }
 
   &__footer {
@@ -100,6 +101,10 @@
 @media only screen and (max-width: utils.$tablet1000) {
   .about-company {
     height: 700px;
+
+    &__description {
+      line-height: 20px;
+    }
 
     .container {
       padding-top: 23px;
