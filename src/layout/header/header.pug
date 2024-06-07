@@ -16,10 +16,10 @@ include layout/utils
                 'Примеры внедрения ГЛОНАСС',
             ]
         },
-        { title: 'О компании', isMain: true },
-        { title: 'Акции', isMain: true },
-        { title: 'проекты', isMain: true },
-        { title: 'Контакты', isMain: true },
+        { title: 'О компании' },
+        { title: 'Акции' },
+        { title: 'проекты' },
+        { title: 'Контакты' },
     ]
 
 mixin item-text-parser(item)
@@ -34,14 +34,6 @@ mixin item-text-parser(item)
     else
         +anchor&attributes(attributes)= item.title
 
-mixin item-parser(item)
-    -
-        var attributes = {}
-
-        if (item.isMain) attributes['data-main-menu'] = true
-
-    li.header__menu-item()&attributes(attributes): block
-
 header.header
     .container: .header__inner
         .header__logo-wrapper
@@ -50,7 +42,7 @@ header.header
         .header__mobile-wrapper
             nav.header__menu-wrapper: ul.header__menu
                 each item in menu
-                    +item-parser(item)
+                    li.header__menu-item
                         +item-text-parser(item)
 
                         if 'list' in item
