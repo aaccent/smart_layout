@@ -29,7 +29,9 @@ include layout/utils
         each item in list
             li.contacts__list-item
                 .contacts__list-item-text= item
-                .contacts__list-item__schedule Пн-Пт, 08:00 - 18:00
-                +anchor('mailto:smartsale@gmail.com').contacts__list-item__email smartsale@gmail.com
-                +anchor('tel:8 (976) 543-21-00').contacts__list-item__tel 8 (976) 543-21-00
-    .contacts__map
+                .contacts__list-item-wrapper
+                    .contacts__list-item-wrapper-block
+                        .contacts__list-item__schedule Пн-Пт, 08:00 - 18:00
+                        +anchor('mailto:smartsale@gmail.com').contacts__list-item__email smartsale@gmail.com
+                    +anchor('tel:8 (976) 543-21-00').contacts__list-item__tel 8 (976) 543-21-00
+    .contacts__map(data-coords="49.06281437490501, 55.84745931863819")

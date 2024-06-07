@@ -1,1 +1,34 @@
+@use "styles/utils";
 @use "./components/contacts-section/contacts-section";
+@use "node_modules/mapbox-gl/dist/mapbox-gl.css";
+
+.contacts {
+  &__map {
+    height: 570px;
+    border-radius: 40px;
+
+    &-marker {
+      @include utils.bg-defaults(cover);
+      background-image: url("assets/icons/map-marker.svg");
+      width: 80px;
+      height: 91px;
+    }
+  }
+
+  .mapboxgl-control-container {
+    display: none;
+  }
+
+  &-marker {
+    @include utils.bg-defaults(cover);
+    background-image: url("assets/icons/map-marker.svg");
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contacts {
+    &__map {
+      border-radius: 20px;
+    }
+  }
+}
