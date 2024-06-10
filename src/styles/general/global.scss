@@ -8,9 +8,8 @@ html {
 
 .section-wrapper {
   position: relative;
-  margin: -50px 0 -34px;
+  margin: -38px 0;
   width: 100%;
-  border-radius: 32px;
 
   &:first-child {
     margin-top: 0;
@@ -18,29 +17,24 @@ html {
     border-top-right-radius: 0;
   }
 
-  &:last-child:not(.section-wrapper--white) {
-    margin-bottom: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    &:has( .seo) {
-      border-bottom-left-radius: 32px;
-      border-bottom-right-radius: 32px;
-      margin-bottom: -34px;
-    }
-  }
-
   &--white {
     z-index: 2;
     padding: 80px 0;
     background-color: var(--base100);
+    border-radius: 32px;
   }
 
   &--gradient {
     z-index: 1;
-    padding: 150px 0;
+    padding: 188px 0;
     background-image: var(--gradient_large);
     color: var(--base100);
+
+    &:has(.reviews) {
+      border-top-right-radius: 32px;
+      border-top-left-radius: 32px;
+      padding-top: 80px;
+    }
   }
 
   .section-wrapper + .section-wrapper {
@@ -51,14 +45,20 @@ html {
 @media only screen and (max-width: utils.$tablet1000) {
   .section-wrapper {
     margin: -25px 0;
-    border-radius: 20px;
 
     &--white {
       padding: 25px 0;
+      border-radius: 20px;
     }
 
     &--gradient {
-      padding: 70px 0;
+      padding: 95px 0;
+
+      &:has(.reviews) {
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        padding-top: 23px;
+      }
     }
 
     .swiper {
