@@ -54,7 +54,7 @@
       max-width: 367px;
       width: 100%;
       position: absolute;
-      top:0;
+      top: 0;
       right: 0;
     }
 
@@ -109,27 +109,32 @@
 
   .navigation-buttons {
     position: absolute;
-    right: calc(80* 1* var(--screen-delta) + 80px);
-    bottom: calc(61* 1* var(--screen-delta) + 61px);
+    right: calc(80 * 1 * var(--screen-delta) + 80px);
+    bottom: calc(61 * 1 * var(--screen-delta) + 61px);
     z-index: 10;
     justify-content: end;
 
     .arrow-btn {
       background-color: hsla(0, 0%, 100%, 0.1);
 
-      &::after{
+      &::after {
         filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(157deg) brightness(102%) contrast(105%);
       }
-    }
-  }
 
-  .swiper-pagination {
-    display: none;
+      &--next ._progress-bg {
+        --progress: 0;
+        position: absolute;
+        inset: 0;
+        background-color: hsla(0, 0%, 100%, 0.1);
+        width: calc(100% * var(--progress));
+      }
+    }
   }
 
   @media screen and (max-width: utils.$tablet1000) {
     &__picture-wrapper {
       position: relative;
+
       &::before {
         content: '';
         position: absolute;

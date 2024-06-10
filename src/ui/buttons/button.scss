@@ -95,10 +95,6 @@
     height: 12px;
   }
 
-  &--next::after {
-
-  }
-
   &--prev::after {
     content: '';
     background-image: url("assets/icons/double-arrow__black.svg");

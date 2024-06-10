@@ -6,7 +6,7 @@ import 'layout/footer/footer.js'
 
 import 'components/specialists/specialists'
 import 'components/gallery/gallery'
-import 'components/main-hero/main-hero'
+import 'components/main-hero/main-hero.js'
 import 'components/solutions/solutions.js'
 import 'components/seo/seo.js'
 import 'components/reviews/reviews'
