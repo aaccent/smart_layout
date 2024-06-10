@@ -87,7 +87,7 @@
   justify-content: center;
 
   &::after {
-    @include utils.bg-defaults(auto);
+    @include utils.bg-defaults(contain);
     content: '';
     display: block;
     background-image: url("assets/icons/double-arrow__black.svg");
