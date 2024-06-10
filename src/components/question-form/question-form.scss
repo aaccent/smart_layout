@@ -115,9 +115,12 @@
       border-radius: 15px;
     }
 
-    &__inputs {
+    .inputs {
       gap: 20px;
 
+      input {
+        padding-bottom: 10px;
+      }
     }
 
     &__footer {
