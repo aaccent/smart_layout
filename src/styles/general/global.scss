@@ -43,10 +43,6 @@ html {
     color: var(--base100);
   }
 
-  //&:has(> .reviews) {
-  //  //margin: -50px;
-  //}
-
   .section-wrapper + .section-wrapper {
     margin-top: 0;
   }
@@ -63,6 +59,10 @@ html {
 
     &--gradient {
       padding: 70px 0;
+    }
+
+    .swiper {
+      overflow: visible;
     }
   }
 }
