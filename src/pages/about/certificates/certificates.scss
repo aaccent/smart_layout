@@ -17,6 +17,14 @@
     color: var(--base100);
     height: 368px;
 
+    @include utils.hover {
+      background-color: hsla(0, 0%, 100%, 0.14);
+
+      .certificates__item-button {
+        opacity: 1;
+      }
+    }
+
     &-type {
       @include utils.text-base-500-lg-100;
       text-transform: uppercase;

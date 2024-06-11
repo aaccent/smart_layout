@@ -37,6 +37,10 @@
       padding: 30px 30px 31px 32px;
       border-radius: 21px;
 
+      @include utils.hover {
+        background-color: hsla(0, 0%, 95%, 1);
+      }
+
       &._active {
         background-color: var(--primary);
         color: var(--base100);
@@ -53,6 +57,18 @@
     height: 540px;
     position: relative;
     color: var(--base100);
+
+    @include utils.hover{
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: hsla(216, 100%, 22%, 0.31);
+        opacity: .31;
+        display: block;
+        border-radius: 50px;
+      }
+    }
 
     &-image {
       width: 100%;

@@ -146,6 +146,17 @@
     justify-content: space-between;
     color: var(--primary);
 
+    @include utils.hover {
+      color: hsla(216, 79%, 35%, 1);
+
+      &::after {
+        background-image: url("assets/icons/arrow-white.svg");
+        filter: none;
+        background-color: hsla(216, 79%, 35%, 1);
+
+      }
+    }
+
     &::after {
       content: '';
       @include utils.square(24px);
@@ -165,6 +176,13 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+  }
+
+  .header__call-button {
+    @include utils.hover {
+      background-color: hsl(0, 0%, 100%, .2);
+      @include utils.transition(background-color);
+    }
   }
 
   &__tel {

@@ -6,6 +6,10 @@
   --margin: 56px;
   position: relative;
 
+  &:not(:first-child) {
+    margin-top: 150px;
+  }
+
     &__header {
     display: flex;
     gap: 61px;
@@ -44,6 +48,14 @@
     align-items: center;
     position: relative;
     height: auto;
+
+    @include utils.hover {
+      color: var(--primary);
+
+      .solutions__item-button {
+        color: var(--base300);
+      }
+    }
 
     &:nth-child(1),
     &:nth-child(3) {
@@ -104,6 +116,10 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
   .solutions {
+    &:not(:first-child) {
+      margin-top: 70px;
+    }
+
     .container {
       position: relative;
     }

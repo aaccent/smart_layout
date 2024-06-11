@@ -84,6 +84,16 @@
     }
   }
 
+  .socials__img {
+    @include utils.hover {
+      background-color: var(--base100);
+
+      img {
+        filter: var(--filter-black);
+      }
+    }
+  }
+
   @media only screen and (max-width: utils.$tablet1000) {
     padding-top: 90px;
 

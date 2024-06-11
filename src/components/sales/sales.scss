@@ -12,6 +12,12 @@
       border-radius: 40px;
       background-color: hsla(0, 0%, 100%, 0.1);
 
+      @include utils.hover {
+        .sales-list__item-button {
+          opacity: 1;
+        }
+      }
+
       &-image {
         border-radius: 40px;
         width: 340px;
