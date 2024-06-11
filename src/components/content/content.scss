@@ -17,7 +17,6 @@
     }
   }
 
-
   &-title {
     @include utils.text-base-400-reg-100;
     text-transform: uppercase;
@@ -37,7 +36,7 @@
     }
 
     &:not(:first-of-type) {
-      margin-top: 80px;
+      margin-top: 55px;
     }
   }
 
@@ -56,10 +55,6 @@
   p {
     max-width: 1080px;
     margin-bottom: 25px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   ul, ol {
@@ -125,34 +120,42 @@
   }
 
   @media only screen and (max-width: utils.$tablet1000) {
+
     .section-title {
       margin-bottom: 20px;
     }
 
-    &__section {
-      padding: 20px 0 40px;
+    &-title:not(:first-of-type) {
+      margin-top: 40px;
+    }
 
-      &-title {
-        display: none;
-      }
+    &-title {
+      height: 1px;
+      overflow: hidden;
+      position: static;
+      margin-bottom: 20px;
+    }
 
-      h3 {
-        margin-bottom: 20px;
-      }
+    h3 {
+      margin-bottom: 20px;
+    }
 
-      h4 {
-        margin-bottom: 15px;
-      }
+    h4 {
+      margin-bottom: 15px;
+    }
 
-      ol li::before {
-        width: 45px;
-        height: 45px;
-      }
+    ul, ol {
+      margin: 15px 0 25px;
+    }
 
-      img {
-        border-radius: 15px;
-        height: 330px;
-      }
+    ol li::before {
+      width: 45px;
+      height: 45px;
+    }
+
+    img {
+      border-radius: 15px;
+      height: 330px;
     }
 
     blockquote p {

@@ -2,14 +2,14 @@
 
 .about-company {
   position: relative;
-  margin-top: -50px;
   height: 842px;
   color: var(--base100);
   z-index: 1;
 
   &__image {
     position: relative;
-    border-radius: 32px;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
     overflow: hidden;
 
     &::after {
@@ -102,6 +102,12 @@
   .about-company {
     height: 700px;
 
+    &__image {
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
     &__description {
       line-height: 20px;
     }
@@ -109,11 +115,6 @@
     .container {
       padding-top: 23px;
       padding-bottom: 45px;
-    }
-
-    &__image {
-      height: 100%;
-      border-radius: 20px;
     }
 
     &__header {

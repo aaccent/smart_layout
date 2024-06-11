@@ -14,11 +14,13 @@
   }
 
   &__text {
-    height: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
     overflow: hidden;
 
     &._opened {
-      height: fit-content;
+      -webkit-line-clamp: initial;
     }
   }
 
@@ -62,7 +64,7 @@
     }
 
     &__text {
-      height: 180px;
+      -webkit-line-clamp: 10;
     }
 
     &__controls {

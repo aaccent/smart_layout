@@ -62,14 +62,24 @@
     &-icon {
       @include utils.bg-defaults(auto);
       position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 24px;
       height: 24px;
       top: 24px;
       right: 0;
       border-radius: 8px;
       border: 1px solid var(--base300);
-      background-image: url("assets/icons/arrow.svg");
       filter: brightness(0) saturate(100%) invert(100%) sepia(95%) saturate(0%) hue-rotate(189deg) brightness(105%) contrast(105%);
+
+      &::after {
+        @include utils.bg-defaults(contain);
+        content: '';
+        width: 13px;
+        height: 12px;
+        background-image: url("assets/icons/arrow.svg");
+      }
     }
   }
 
@@ -104,6 +114,12 @@
     &__item-icon {
       width: 20px;
       height: 20px;
+      border-radius: 6px;
+
+      &::after {
+        width: 6px;
+        height: 6px;
+      }
     }
   }
 }
