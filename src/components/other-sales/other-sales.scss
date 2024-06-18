@@ -9,6 +9,12 @@
     background-color: hsla(0, 0%, 100%, 0.1);
     height: auto;
 
+    @include utils.hover {
+      .other-sales__item-footer {
+        opacity: 1;
+      }
+    }
+
     &-image {
       border-radius: 40px;
       width: 340px;

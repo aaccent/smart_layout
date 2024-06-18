@@ -7,11 +7,6 @@
   background-color: hsl(0, 0%, 100%, .1);
   @include utils.text-btn;
   text-transform: uppercase;
-
-  @include utils.hover {
-    background-color: hsl(0, 0%, 100%, .2);
-    @include utils.transition(background-color);
-  }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {

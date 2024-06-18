@@ -26,6 +26,12 @@
     display: flex;
     color: var(--base100);
 
+    @include utils.hover {
+      .software__item-button {
+        opacity: 1;
+      }
+    }
+
     &::after {
       content: '';
       display: block;

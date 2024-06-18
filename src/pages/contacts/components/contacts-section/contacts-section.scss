@@ -43,6 +43,12 @@
         img {
           filter: var(--filter-black);
         }
+
+        @include utils.hover {
+          img {
+            filter: var(--filter-primary);
+          }
+        }
       }
     }
   }

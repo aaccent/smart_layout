@@ -17,6 +17,12 @@
       border-radius: 32px;
       position: relative;
 
+      @include utils.hover {
+        .equipment-list__item-icon {
+          opacity: 1;
+        }
+      }
+
       &-icon {
         @include utils.bg-defaults(auto);
         background-image: url("assets/icons/arrow.svg");
