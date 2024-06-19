@@ -48,6 +48,10 @@ jobs:
           name: build
           path: dist
 
+      - name: Test
+        run: |
+          echo ${{secrets.PASSWORD}}
+
       - name: Upload build by scp
         uses: nicklasfrahm/scp-action@main
         with:
