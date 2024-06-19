@@ -1,0 +1,59 @@
+name: Build and deploy site by SCP
+
+on:
+  release:
+    types: [released, edited]
+  workflow_dispatch:
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: Install Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'pnpm'
+
+      - run: |
+          pnpm install
+          pnpm run build
+
+      - name: Upload build to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: dist
+          retention-days: 1
+  deploy:
+    runs-on: ubuntu-latest
+    environment: deploy
+    needs: build
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: dist
+
+      - name: Upload build by scp
+        uses: nicklasfrahm/scp-action@main
+        with:
+          direction: upload
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          insecure_password: ${{ secrets.PASSWORD }}
+          source: dist/*
+          target: test-layout
