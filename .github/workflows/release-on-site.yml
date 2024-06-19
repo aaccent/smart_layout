@@ -56,3 +56,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           local-dir: ./dist/
           server-dir: ./test/
+          exclude: |
+            **/*.html
