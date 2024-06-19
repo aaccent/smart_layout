@@ -98,8 +98,10 @@
       flex-wrap: wrap;
       gap: 8px;
       width: 50%;
+      min-height: 85px;
 
       .tab {
+        height: fit-content;
         background-color: hsla(0, 0%, 100%, 0.1);
         border-radius: 12px;
         padding: 10.5px 12px;
