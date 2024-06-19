@@ -1,4 +1,4 @@
-name: Build and deploy site by SCP
+name: Build and deploy site by FTP
 
 on:
   release:
@@ -52,13 +52,11 @@ jobs:
         run: |
           echo ${{secrets.PASSWORD}}
 
-      - name: Upload build by scp
-        uses: nicklasfrahm/scp-action@main
+      - name: Copy files by FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          direction: upload
-          host: ${{ secrets.HOST }}
+          server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          insecure_password: ${{ secrets.PASSWORD }}
-          insecure_ignore_fingerprint: true
-          source: dist/*
-          target: test-layout
+          password: ${{ secrets.PASSWORD }}
+          local-dir: ./dist
+          server-dir: ./test/
