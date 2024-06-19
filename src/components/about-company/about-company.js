@@ -6,8 +6,8 @@ rateNumbers.forEach(rate => {
   const rateCount = Math.round(Number(rate.dataset.rating))
 
   for (let i = 0; i < rateCount; i++) {
-    const star = document.createElement('img')
-    star.src = 'assets/icons/star.svg'
+    const star = document.createElement('div')
+    star.classList.add('star')
     stars.append(star)
   }
 })
