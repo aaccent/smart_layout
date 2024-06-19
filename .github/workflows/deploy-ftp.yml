@@ -57,6 +57,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./test/
+          server-dir: .${{ vars.PATH }}/
           exclude: |
             **/*.html
