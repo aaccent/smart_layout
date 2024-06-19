@@ -48,15 +48,11 @@ jobs:
           name: build
           path: dist
 
-      - name: Test
-        run: |
-          echo ${{secrets.PASSWORD}}
-
       - name: Copy files by FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          local-dir: ./dist
+          local-dir: ./dist/
           server-dir: ./test/
