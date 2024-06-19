@@ -55,5 +55,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           insecure_password: ${{ secrets.PASSWORD }}
+          insecure_ignore_fingerprint: true
           source: dist/*
           target: test-layout
