@@ -2,11 +2,20 @@
 
 .call-popup {
   &__inner {
-    background-color: var(--base100);
-    max-width: 1394px;
-    width: 100%;
-    border-radius: 32px;
-    padding: 75px 0 80px;
+
+
+    display: flex;
+    flex-direction: column;
+
+    .container {
+      position: relative;
+      max-width: 1394px;
+      width: 100%;
+      background-color: var(--base100);
+      border-radius: 32px;
+      padding-left: 80px;
+      padding-right: 0;
+    }
   }
 
   &__form {
@@ -17,6 +26,7 @@
       @include utils.text-header-200;
       margin-bottom: 24px;
       color: var(--base300);
+      padding-top: 75px;
     }
 
     &-text {
@@ -43,6 +53,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 80px;
     }
 
     .btn--blue {
@@ -66,10 +77,6 @@
   }
 
   &__image {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
     background-color: hsla(0, 0%, 95%, 1);
     border-radius: 32px;
     width: 621px;
@@ -92,9 +99,14 @@
       flex-direction: column;
       gap: 15px;
 
+      .container {
+        padding: 25px;
+      }
+
       .close-btn {
         position: initial;
         align-self: flex-end;
+        margin: 0;
       }
 
       .container {
@@ -107,6 +119,7 @@
 
     &__form-title {
       margin-bottom: 10px;
+      padding: 0;
     }
 
     &__form-text {
@@ -117,6 +130,7 @@
       margin-top: 25px;
       flex-direction: column;
       gap: 20px;
+      padding: 0;
     }
 
     &__image {
