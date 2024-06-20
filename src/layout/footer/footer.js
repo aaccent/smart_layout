@@ -8,3 +8,15 @@ void function () {
     })
   })
 }()
+
+void function () {
+  const scrollUpButton = document.querySelector('[data-action="scroll-up"]')
+  if(!scrollUpButton) return
+
+  scrollUpButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  })
+}()
