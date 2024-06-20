@@ -8,13 +8,6 @@ form {
     flex-direction: column;
     gap: 48px;
 
-    textarea {
-      @include utils.custom-scroll(10px, transparent, white);
-      background-color: transparent;
-      resize: none;
-      outline: none;
-    }
-
     input, textarea {
       @include utils.text-base-200-lg-100;
       border: none;
@@ -25,6 +18,27 @@ form {
       &::placeholder {
         @include utils.text-header-400;
         color: var(--base100);
+      }
+    }
+
+    textarea {
+      @include utils.custom-scroll(10px, transparent, white);
+      background-color: transparent;
+      resize: none;
+      outline: none;
+      height: 42px;
+      padding-bottom: 0;
+
+      &::placeholder {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .inputs {
+      textarea {
+        height: 30px;
       }
     }
   }
