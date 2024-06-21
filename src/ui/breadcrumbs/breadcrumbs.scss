@@ -1,0 +1,38 @@
+@use "styles/utils";
+
+.breadcrumbs {
+  @include utils.text-base-300-lg-100;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  top: 121px;
+  left: 80px;
+  z-index: 9;
+  color: var(--base100);
+  opacity: .5;
+
+  li:not(:first-child) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &::before {
+      @include utils.bg-defaults();
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      background-image: url("assets/icons/double-arrow.svg");
+    }
+  }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+  .breadcrumbs {
+    top: 80px;
+    left: 25px;
+  }
+}

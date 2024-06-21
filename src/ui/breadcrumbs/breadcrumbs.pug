@@ -1,0 +1,7 @@
+include layout/utils
+
+mixin breadcrumbs(props)
+  ul.breadcrumbs
+    each crumb in props
+      li
+        +anchor=crumb

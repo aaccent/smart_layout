@@ -1,4 +1,5 @@
 include layout/utils
+include ui/breadcrumbs/breadcrumbs
 
 mixin page-hero(props)
   -
@@ -13,6 +14,7 @@ mixin page-hero(props)
     }, props || {})
 
   .section.page-hero
+    +breadcrumbs([ 'Главная', 'O компании'])
     .page-hero__wrapper
       picture
         source(srcset=props.mobPicture media='(max-width: 1000px)')
