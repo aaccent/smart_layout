@@ -4,18 +4,64 @@
     margin-top: 0;
 }
 
+body._active-menu {
+    .header {
+        color: var(--base300);
+
+        &__inner::after {
+            background-color: var(--base300);
+            @include utils.transition(background-color);
+        }
+
+        &__logo {
+            filter: var(--filter-black);
+            @include utils.transition(filter);
+        }
+
+        &__menu-item-text {
+            opacity: .5;
+            @include utils.transition(opacity);
+        }
+
+        &__call-button {
+            @include utils.transition((background-color, color));
+            background-color: var(--primary);
+            color: var(--base100);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: fixed;
+        z-index: 5;
+        background-color: hsl(215, 100%, 2%, 0.65);
+        inset: 0;
+    }
+}
+
 // Default state
 .header {
     position: absolute;
-    z-index: 10;
+    z-index: 11;
     width: 100%;
     color: var(--base100);
 
     &__inner {
+        position: relative;
         padding: 25px 0;
         display: flex;
         align-items: center;
-        border-bottom: 1px solid var(--base100);
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            background: var(--base100);
+            pointer-events: none;
+        }
     }
 
     &__mobile-wrapper {
@@ -39,6 +85,11 @@
             height: 1.5px;
             background-color: var(--base100);
         }
+    }
+
+    &__logo-wrapper {
+        position: relative;
+        z-index: 1;
     }
 
     &__logo {
@@ -67,7 +118,7 @@
 
     &__menu-item {
         @include utils.hover {
-            & > .header__menu-item-text {
+            &:not(.header__menu-item--detailed) > .header__menu-item-text {
                 opacity: .5;
             }
         }
@@ -80,7 +131,13 @@
         }
     }
 
+    &__menu-item--detailed:hover &__menu-item-text {
+        opacity: 1 !important;
+    }
+
     &__menu-item-text {
+        position: relative;
+        z-index: 1;
         text-transform: uppercase;
         cursor: pointer;
         @include utils.transition(opacity);
@@ -101,6 +158,62 @@
             font: 500 1rem/1 var(--geologica);
             letter-spacing: 0.01em;
             background-color: var(--base100);
+        }
+    }
+
+    &__menu-item--detailed &__submenu {
+        position: fixed;
+        z-index: initial;
+        top: 0;
+        right: 0;
+        left: 0;
+        padding: 130px 80px 80px;
+        display: flex;
+        border-radius: 0 0 32px 32px;
+        gap: 100px;
+
+        &-list {
+            @include utils.text-base-300-lg-100;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: grid;
+            border-bottom: 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px 48px;
+
+            li, a {
+                width: max-content;
+            }
+        }
+
+        &-link {
+            padding: 20px 20px 25px;
+            max-width: 365px;
+            height: 115px;
+            flex-shrink: 0;
+            align-items: end;
+            color: var(--base100);
+            @include utils.bg-defaults(cover);
+            background-image: url("assets/static/more-bg.jpg?as=webp");
+            border-radius: 24px;
+
+            &:hover {
+                color: var(--base100);
+            }
+
+            &::after {
+                position: relative;
+                top: 5px;
+                background-image: url("assets/icons/arrow-white.svg");
+                border-color: var(--base100);
+                filter: initial;
+            }
+
+            &:hover::after {
+                background-color: var(--base100);
+                background-image: url("assets/icons/arrow.svg");
+            }
         }
     }
 
@@ -153,7 +266,6 @@
                 background-color: hsla(216, 79%, 35%, 1);
                 background-image: url("assets/icons/arrow-white.svg");
                 filter: none;
-
             }
         }
 
@@ -171,6 +283,8 @@
     }
 
     &__contacts-wrapper {
+        position: relative;
+        z-index: 1;
         margin-right: 80px;
         margin-left: auto;
         display: flex;
@@ -179,6 +293,9 @@
     }
 
     .header__call-button {
+        position: relative;
+        z-index: 1;
+
         @include utils.hover {
             background-color: hsl(0, 0%, 100%, .2);
             @include utils.transition(background-color);
