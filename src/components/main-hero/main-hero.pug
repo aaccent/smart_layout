@@ -4,7 +4,7 @@ include layout/utils
     var content = [
         {
             header: 'GPS-трекер 3500 ₽',
-            image:'assets/content/main-hero-banner.png?as=webp',
+            image: 'assets/content/main-hero-banner.png?as=webp',
             mobImage: 'assets/content/mobile-banner.jpg?as=webp',
             buttonText: 'Об акции',
             benefitIcon: 'assets/icons/cube.svg',
@@ -18,7 +18,7 @@ include layout/utils
         },
         {
             header: 'Какой-то заголовок',
-            image:'assets/content/main-hero-banner2.jpg?as=webp',
+            image: 'assets/content/main-hero-banner2.jpg?as=webp',
             mobImage: 'assets/content/mobile-banner.jpg?as=webp',
             buttonText: 'Кнопка соссылкой',
             benefitIcon: 'assets/icons/cube.svg',
@@ -44,38 +44,37 @@ include layout/utils
         },
     ]
 
-.main-hero
-    .swiper
-        .swiper-wrapper
-            each item, i in content
-                .swiper-slide.main-hero__banner
-                    .main-hero__picture-wrapper: picture
-                        source(srcset=require(item.image) media='(max-width:1000px)')
-                        source(srcset=require(item.image))
-                        +img(require(item.image)).main-hero__banner-img
-                    .container
-                        .main-hero__banner-top
-                            .main-hero__banner-info
-                                if i === 0
-                                    h1.main-hero__banner-header=item.header
-                                else
-                                    div.main-hero__banner-header=item.header
-                                .main-hero__banner-description=item.description
-                            .main-hero__banner-buttons
-                                +anchor.btn.btn--white
-                                    span=item.buttonText
-                                .main-hero__banner-benefit
-                                    +img(require(item.benefitIcon))
-                                    .main-hero__banner-benefit-text=item.benefitText
-                        .main-hero__banner-bottom
-                            .section-title-wrapper
-                            .main-hero__banner-tabs
-                                each tab in item.tabs
-                                    .tab=tab
-        .navigation-buttons
-            +wrapBreak: button.arrow-btn.arrow-btn--prev
-            +wrapBreak: button.arrow-btn.arrow-btn--next
-        .swiper-pagination
+.main-hero: .swiper
+    .swiper-wrapper
+        each item, i in content
+            .swiper-slide.main-hero__banner
+                .main-hero__picture-wrapper: picture
+                    source(srcset=require(item.image) media='(max-width:1000px)')
+                    source(srcset=require(item.image))
+                    +img(require(item.image)).main-hero__banner-img
+                .container
+                    .main-hero__banner-top
+                        .main-hero__banner-info
+                            if i === 0
+                                h1.main-hero__banner-header=item.header
+                            else
+                                div.main-hero__banner-header=item.header
+                            .main-hero__banner-description=item.description
+                        .main-hero__banner-buttons
+                            +anchor.btn.btn--white
+                                span=item.buttonText
+                            .main-hero__banner-benefit
+                                +img(require(item.benefitIcon))
+                                .main-hero__banner-benefit-text=item.benefitText
+                    .main-hero__banner-bottom
+                        .section-title-wrapper
+                        .main-hero__banner-tabs
+                            each tab in item.tabs
+                                .tab=tab
+    .navigation-buttons
+        +wrapBreak: button.arrow-btn.arrow-btn--prev
+        +wrapBreak: button.arrow-btn.arrow-btn--next
+    .swiper-pagination
 
 
 
