@@ -4,6 +4,16 @@
     margin-top: 0;
 }
 
+body:has( .header.header--open-menu) {
+    overflow-y: hidden;
+    overflow-y: clip;
+}
+
+html:has( .header.header--open-menu) {
+    overflow-y: hidden;
+    overflow-y: clip;
+}
+
 body._active-menu {
     .header {
         color: var(--base300);
@@ -25,8 +35,8 @@ body._active-menu {
 
         &__call-button {
             @include utils.transition((background-color, color));
-            background-color: var(--primary);
             color: var(--base100);
+            background-color: var(--primary);
         }
     }
 
@@ -55,12 +65,12 @@ body._active-menu {
         &::after {
             content: "";
             position: absolute;
-            left: 0;
             right: 0;
             bottom: 0;
+            left: 0;
             height: 1px;
-            background: var(--base100);
             pointer-events: none;
+            background: var(--base100);
         }
     }
 
@@ -85,11 +95,6 @@ body._active-menu {
             height: 1.5px;
             background-color: var(--base100);
         }
-    }
-
-    &__logo-wrapper {
-        position: relative;
-        z-index: 1;
     }
 
     &__logo {
@@ -477,6 +482,10 @@ body._active-menu {
                     display: block;
                 }
             }
+
+            &._active.header__menu-item--detailed .header__submenu {
+                display: flex;
+            }
         }
 
         &__menu-item-text {
@@ -504,6 +513,40 @@ body._active-menu {
         &__menu-item:not(:has( .header__submenu)) &__menu-item-text {
             &::before {
                 rotate: -90deg;
+            }
+        }
+
+        &__menu-item--detailed &__submenu {
+            z-index: 10;
+            padding: 0 25px 25px;
+            width: 100%;
+            display: none;
+            flex-direction: column;
+            color: var(--base300);
+            background-color: var(--base100);
+            border-radius: 0;
+            inset: 0;
+            gap: 0;
+
+            .header__logo-wrapper {
+                filter: var(--filter-black);
+            }
+
+            &-list {
+                margin-top: 40px;
+                grid-template-columns: 1fr;
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            &-link {
+                margin-top: 35px;
+                display: flex;
+                height: fit-content;
+
+                &::after {
+                    top: initial;
+                }
             }
         }
 
