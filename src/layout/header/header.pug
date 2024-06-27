@@ -79,7 +79,7 @@ header.header
                         if 'list' in item
                             div.header__submenu
                                 ul.header__submenu-list: each subitem in item.list
-                                    li: +anchor= subitem
+                                    li.header__menu-item: +anchor.header__menu-item-text= subitem
                                 +anchor.header__submenu-link= item.isDetail ? 'смотреть всё' : 'перейти в раздел'
             .header__contacts-wrapper
                 +anchor('tel:8 (976) 543-21-00').header__tel 8 (976) 543-21-00
