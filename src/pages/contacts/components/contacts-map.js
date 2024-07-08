@@ -14,7 +14,7 @@ void function () {
   const map = new Map({
     container: mapContainer,
     center: coords, //[49.093589, 55.826865],
-    zoom: 16,
+    zoom: 10,
     accessToken: 'pk.eyJ1Ijoic2V2YS1hYWNjZW50IiwiYSI6ImNsb2ZlNzR0NDByajUya3FwcmQ4bHdoZG8ifQ.2oZ5rpkSs2dKoP5a10lkcg',
     style: 'mapbox://styles/seva-aaccent/clretvjxt00d401qngujcacgz',
     dragRotate: false,
