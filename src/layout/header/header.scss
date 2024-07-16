@@ -4,14 +4,14 @@
     margin-top: 0;
 }
 
-body:has( .header.header--open-menu) {
+html:has( .header--open-menu) {
     overflow-y: hidden;
     overflow-y: clip;
-}
 
-html:has( .header.header--open-menu) {
-    overflow-y: hidden;
-    overflow-y: clip;
+    body {
+        overflow-y: hidden;
+        overflow-y: clip;
+    }
 }
 
 body._active-menu {
@@ -49,12 +49,68 @@ body._active-menu {
     }
 }
 
+.header.header--sticky {
+    &::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.header.header--sticky:not(.header--open-menu) {
+    color: var(--base300);
+
+    .container {
+        z-index: 10;
+        position: relative;
+    }
+
+    .header {
+        &__inner::after {
+            display: none;
+        }
+
+        &__logo {
+            filter: var(--filter-black);
+            @include utils.transition(filter);
+        }
+
+        &__call-button {
+            @include utils.transition((background-color, color));
+            color: var(--base100);
+            background-color: var(--primary);
+        }
+
+        &__menu-btn {
+            &::before, &::after {
+                background-color: var(--base300);
+            }
+        }
+    }
+}
+
 // Default state
 .header {
-    position: absolute;
+    position: fixed;
     z-index: 11;
     width: 100%;
     color: var(--base100);
+    @include utils.transition((background-color, color, border-radius, padding));
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: hsl(0deg 0% 100% / 70%);
+        backdrop-filter: blur(20px);
+        border-radius: 0 0 10px 10px;
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        @include utils.transition((opacity,visibility));
+    }
 
     &__inner {
         position: relative;
@@ -94,6 +150,7 @@ body._active-menu {
             width: 100%;
             height: 1.5px;
             background-color: var(--base100);
+            @include utils.transition(background-color);
         }
     }
 
@@ -339,53 +396,6 @@ body._active-menu {
     }
 }
 
-// Opened state
-@media only screen and (max-width: utils.$tablet1000) {
-    .header--open-menu {
-        position: relative;
-        z-index: 20;
-
-        &::before {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100lvh;
-            display: block;
-            background: var(--gradient_large);
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .header__menu-btn {
-            @include utils.square(22px);
-
-            &::before, &::after {
-                position: absolute;
-                width: 30px;
-            }
-
-            &::before {
-                rotate: -45deg;
-            }
-
-            &::after {
-                rotate: 45deg;
-            }
-        }
-
-        .header__mobile-wrapper {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-}
-
 @media only screen and (max-width: 1460px) {
     .header {
         &__contacts-wrapper {
@@ -420,6 +430,21 @@ body._active-menu {
     }
 
     .header {
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100lvh;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            background: var(--gradient_large);
+            @include utils.transition((opacity, visibility));
+        }
+
         &__inner {
             padding: 0;
             border-bottom: 0;
@@ -451,6 +476,7 @@ body._active-menu {
             overflow-y: auto;
             opacity: 0;
             visibility: hidden;
+            @include utils.transition((opacity, visibility));
         }
 
         &__menu-btn {
@@ -490,8 +516,16 @@ body._active-menu {
                 }
             }
 
-            &._active.header__menu-item--detailed .header__submenu {
-                display: flex;
+            &._active.header__menu-item--detailed {
+                .header__menu-item-text {
+                    padding-bottom: 20px;
+                }
+
+                .header__submenu {
+                    visibility: visible;
+                    opacity: 1;
+                    pointer-events: auto;
+                }
             }
         }
 
@@ -527,13 +561,16 @@ body._active-menu {
             z-index: 10;
             padding: 0 25px 25px;
             width: 100%;
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             flex-direction: column;
             color: var(--base300);
             background-color: var(--base100);
             border-radius: 0;
             inset: 0;
             gap: 0;
+            pointer-events: none;
+            @include utils.transition((opacity, visibility));
 
             .header__logo-wrapper {
                 filter: var(--filter-black);
@@ -620,6 +657,45 @@ body._active-menu {
 
         &__address {
             display: block;
+        }
+    }
+}
+
+// Opened state
+@media only screen and (max-width: utils.$tablet1000) {
+    .header--open-menu {
+        z-index: 20;
+
+        &::before {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header__menu-btn {
+            @include utils.square(22px);
+
+            &::before, &::after {
+                position: absolute;
+                width: 30px;
+            }
+
+            &::before {
+                rotate: -45deg;
+            }
+
+            &::after {
+                rotate: 45deg;
+            }
+        }
+
+        .header__mobile-wrapper {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

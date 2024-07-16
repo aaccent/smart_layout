@@ -66,3 +66,24 @@ void function detailMenuMobile() {
     submenu.prepend(clone)
   })
 }()
+
+void function stickyHeader() {
+  const header = document.querySelector('.header')
+  const SCROLL_LIMIT = 25
+  const STICKY_CLASS_NAME = 'header--sticky'
+
+  function toggleStickyHeader() {
+    const hasSticky = header.classList.contains(STICKY_CLASS_NAME)
+    if (window.scrollY > SCROLL_LIMIT && !hasSticky) {
+      header.classList.add(STICKY_CLASS_NAME)
+    } else if (window.scrollY < SCROLL_LIMIT && hasSticky) {
+      header.classList.remove(STICKY_CLASS_NAME)
+    }
+  }
+
+  toggleStickyHeader()
+
+  window.addEventListener('scroll', () => {
+    toggleStickyHeader()
+  })
+}()
