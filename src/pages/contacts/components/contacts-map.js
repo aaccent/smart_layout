@@ -16,7 +16,7 @@ void function () {
     center: coords, //[49.093589, 55.826865],
     zoom: 10,
     accessToken: 'pk.eyJ1Ijoic2V2YS1hYWNjZW50IiwiYSI6ImNsb2ZlNzR0NDByajUya3FwcmQ4bHdoZG8ifQ.2oZ5rpkSs2dKoP5a10lkcg',
-    style: 'mapbox://styles/seva-aaccent/clretvjxt00d401qngujcacgz',
+    style: 'mapbox://styles/seva-aaccent/clwynses200vh01po9j2a2e8c',
     dragRotate: false,
     cooperativeGestures: true,
     locale: {
@@ -33,7 +33,7 @@ void function () {
   const el = document.createElement('div')
   el.className = 'contacts__map-marker'
   elContainer.appendChild(el)
-  const marker = new Marker(elContainer).setLngLat(lngLatObject)
+  const marker = new Marker(elContainer, { anchor: 'bottom' }).setLngLat(lngLatObject)
   marker.addTo(map)
 }()
 
